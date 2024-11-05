@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens do Produto</title>
+</head>
+<body>
+    <h1>Imagens do Produto</h1>
+    <div id="images-container"></div>
+
+    <script>
+        // Fazer a requisição HTTP para buscar as URLs das imagens
+        fetch('http://localhost:3000/produto/2/imagens')
+            .then(response => response.json()) // Converter a resposta para JSON
+            .then(data => {
+                const container = document.getElementById('images-container'); // O contêiner onde as imagens serão exibidas
+
+                // Iterar sobre as URLs das imagens e criar elementos img para cada uma
+                data.images.forEach(imageUrl => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imageUrl; // Definir o src do elemento img para o URL da imagem
+                    imgElement.alt = "Imagem do Produto"; // Texto alternativo
+                    imgElement.style.width = "200px"; // Definir o tamanho (opcional)
+                    imgElement.style.margin = "10px"; // Adicionar um espaço entre as imagens
+                    container.appendChild(imgElement); // Adicionar a imagem ao contêiner
+                });
+            })
+            .catch(error => console.error('Erro ao carregar as imagens:', error));
+    </script>
+</body>
+</html>

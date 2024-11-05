@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 130px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+
+    color: #004AAD;
+}
+
+.acesso, .pessoais, .residenciais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acesso p, .pessoais p, .residenciais p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #004AAD;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.acesso input, .acesso input:focus-visible{
+    width: 310px;
+    height: 47px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    color: #004AAD;
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+
+    padding: 18px 22px;
+    gap: 10px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.acesso input::placeholder{
+    color: #004bad70;
+}
+
+.pessoais input, .pessoais input:focus-visible{
+    width: 310px;
+    height: 47px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    color: #004AAD;
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+
+    padding: 18px 22px;
+    gap: 10px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.pessoais .juntos input{
+    width: 152px;
+}
+
+.pessoais input::placeholder{
+    color: #004bad70;
+}
+
+select, select:active{
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+    width: 310px;
+    height: 47px;
+    padding: 0px 22px;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+select:required:invalid {
+    color: #004AAD;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: #004AAD;
+}
+
+.residenciais input, .residenciais input:focus-visible{
+    width: 310px;
+    height: 47px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    color: #004AAD;
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+
+    padding: 18px 22px;
+    gap: 10px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.residenciais .juntos input{
+    width: 152px;
+}
+
+.residenciais input::placeholder{
+    color: #004bad70;
+}
+
+.line{
+    width: 416px;
+    height: 0px;
+    border: 1px solid #004bad35;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.botao{
+    width: 310px;
+    height: 47px;
+
+    background-color: #004AAD;
+    border-radius: 39px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.botao a{
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+.voltar{
+    margin-bottom: 125px;
+}
+
+.voltar a{
+    text-decoration: none;
+    color: #004AAD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.voltar a:hover{
+    text-decoration: underline;
+}

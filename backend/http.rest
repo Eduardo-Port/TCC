@@ -1,0 +1,27 @@
+POST http://localhost:3000/register_profile
+Content-Type: application/json
+
+	{
+		"nome": "Robert",
+		"sobrenome": "Oliva",
+		"email": "om",
+		"senha": "1gfdghf3",
+		"cpf": "48512",
+		"cidade": "Poá",
+		"bairro": "vilmilia",
+		"rua": "caramuru",
+		"cep": "470",
+		"numero": "153",
+		"compl_num": "84384383",
+		"desc": "apao"
+	}
+
+###
+
+POST http://localhost:3000/authenticate 
+Content-Type: application/json
+
+{
+	"email": "eduardo@gmail",
+	"senha": "123456"
+}

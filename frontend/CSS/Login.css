@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+}
+
+.tudo{
+    top: 0;
+    z-index: 1;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.35);
+    display: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+.voltar a{
+    width: 132px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    color: #004AAD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.tela{
+    margin-top: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.label p{
+    color: #004AAD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.input-login input, .input-login input:focus-visible{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 22px;
+    gap: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: none;
+    outline: none;
+
+
+    width: 371px;
+    height: 55px;
+
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+    color: #004AAD;
+    margin-bottom: 15px;
+}
+
+.input-login input::placeholder{
+    color: #004AAD;
+}
+
+.link-senha{
+    width: 371px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link-senha button{
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    color: #004AAD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.link-senha:visited{
+    color: #004AAD;
+}
+
+.link-senha button:hover{
+    text-decoration: underline;
+}
+
+.line{
+    width: 416px;
+    height: 0px;
+    border: 1px solid #004bad35;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.botao-entrar div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 151px;
+    gap: 10px;
+
+    width: 371px;
+    height: 55px;
+
+    background: #004AAD;
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+    margin-bottom: 10px;
+}
+
+.botao-entrar p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+.botao-entrar{
+    text-decoration: none;
+}
+
+.text-cadastro{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #6B6B6B;
+}
+
+.text-cadastro a{
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.text-cadastro a:hover{
+    text-decoration: underline;
+}
+
+
+.text-cadastro a:visited{
+    color: #004AAD;
+}
+
+.rodapezin{
+    position: absolute;
+    bottom: 0;
+}
+
+.popup{
+    border: none;
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    width: 531px;
+    height: 305px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 27px 23px;
+    gap: 10px;
+    z-index: 2;
+
+    width: 531px;
+    height: 305px;
+
+    background: #FFFFFF;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+
+.popup.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+
+.popup .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.8rem;
+    background: white;
+    color: #004AAD;
+    text-align: center;
+    cursor: pointer;
+}
+
+.popup p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 0px;
+
+    color: #004AAD;
+}
+
+.popup input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 22px;
+    gap: 10px;
+
+    width: 484px;
+    height: 50px;
+
+    background: #FFFFFF;
+    border: 2px solid #004AAD;
+    border-radius: 25px;
+
+    margin-top: 40px;
+}
+
+.popup input:focus-visible{
+    color: #004AAD;
+    outline: none;
+}
+
+.popup input::placeholder{
+    color: #004bad70;
+}
+
+.popup button{
+    width: 484px;
+    height: 50px;
+
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 26px;
+    color: #FFFFFF;
+
+    border-radius: 25px;
+    background-color: #004AAD;
+    margin-top: 20px;
+    cursor: pointer;
+}
