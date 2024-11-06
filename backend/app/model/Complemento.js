@@ -4,18 +4,17 @@ class Complemento {
     constructor(nome, descricao) {
         this.idComplemento = null;
         this.nome = nome;
-        this.descricao = descricao;
     }
     //cria um novo complemento no bd
     async criarComplemento() {
         try {
-            if (this.nome == undefined || this.descricao == undefined) {
+            if (this.nome == undefined) {
                 throw new Error('erro');
             }
             //se o complemento não existe, criar um novo
-            if (!await this.complementoExiste(this.nome, this.descricao)) {
-                const sql = `INSERT INTO Complemento (compl_nome, compl_descricao) VALUES (?, ?)`;
-                const values = [this.nome, this.descricao]
+            if (!await this.complementoExiste(this.nome)) {
+                const sql = `INSERT INTO Complemento (compl_nome) VALUES (?)`;
+                const values = [this.nome]
                 const [resultComplemento] = await conn.query(sql, values)
                 this.idComplemento = resultComplemento.insertId //insertId pega o id do ultimo elemento criado na entidade do bd
                 console.log('COMPLEMENTO CRIADO')
@@ -29,9 +28,9 @@ class Complemento {
         }
     }
 
-    async complementoExiste(nome, desc) {
-        const sql = `SELECT * FROM Complemento WHERE compl_nome = ? AND compl_descricao = ?`
-        const values = [nome, desc]
+    async complementoExiste(nome) {
+        const sql = `SELECT * FROM Complemento WHERE compl_nome = ?`
+        const values = [nome]
         try {
             const [rows] = await conn.query(sql, values)
             if (!rows.length > 0) {

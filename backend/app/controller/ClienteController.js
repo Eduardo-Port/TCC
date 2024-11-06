@@ -36,15 +36,15 @@ class ClienteController {
             nome: req.body.nome,
             sobrenome: req.body.sobrenome,
             email: req.body.email,
-            senha: await cript.hash(req.body.senha, 10),
+            senha: req.body.password,
+            confirmaSenha: req.body.confirmPassword,
             cpf: req.body.cpf,
             cidade: req.body.cidade,
             bairro: req.body.bairro,
             numero: req.body.numero,
-            rua: req.body.rua,
+            rua: req.body.logradouro,
             cep: req.body.cep,
             nomeComplemento: req.body.compl_nome,
-            desc: req.body.desc,
             role: req.body.role
         }
         //pegando dados do body da url
@@ -55,13 +55,24 @@ class ClienteController {
         let emailUnique = false;
         let cpfUnique = false;
         try {
-            console.log(pessoa.role)
+            console.log(pessoa.senha)
+            console.log(pessoa.confirmaSenha)
             //inicia a transaction
             pool = await conn.getConnection()
             await pool.beginTransaction()
 
             //cria cliente
+            pessoa.senha = await cript.hash(pessoa.senha, 10)
+            console.log('--------------')
+            console.log(pessoa.senha)
+            console.log(pessoa.confirmaSenha)
             const clienteObj = new Cliente(pessoa.nome, pessoa.sobrenome, pessoa.email, pessoa.senha, pessoa.cpf, pessoa.role)
+            const match = await cript.compare(pessoa.confirmaSenha, pessoa.senha)
+            if (
+                !match
+            ) {
+                return res.status(400).send({ error: "Senhas distintas" })
+            }
             emailUnique = await clienteObj.emailIsUnique()
             cpfUnique = await clienteObj.cpfIsUnique()
             if (!emailUnique) {
@@ -73,15 +84,15 @@ class ClienteController {
             id_cliente = await clienteObj.criarCliente.call(clienteObj)
 
             //cria complemento
-            const complementoObj = new Complemento(pessoa.nomeComplemento, pessoa.desc)
+            const complementoObj = new Complemento(pessoa.nomeComplemento)
             id_complemento = await complementoObj.criarComplemento.call(complementoObj)
             console.log(id_complemento)
             //cria o endereço
             const enderecoObj = new Endereco(pessoa.cidade, pessoa.cep, pessoa.numero, pessoa.rua, pessoa.bairro, id_cliente)
             id_endereco = await enderecoObj.criaEndereco.call(enderecoObj)
             console.log(id_endereco)
-            if(id_endereco == undefined) {
-                return res.status(400).send({error: "Endereço já cadastrado"})
+            if (id_endereco == undefined) {
+                return res.status(400).send({ error: "Endereço já cadastrado" })
             }
 
             if (!id_complemento == 0)
@@ -221,7 +232,7 @@ class ClienteController {
         // Verifica se a pasta do produto existe
         fs.access(productFolderPath, fs.constants.F_OK, (err) => {
             if (err) {
-                return res.status(404).json({ message: 'Produto não encontrado ou sem imagens', erro: err.message});
+                return res.status(404).json({ message: 'Produto não encontrado ou sem imagens', erro: err.message });
             }
 
             // Lê o conteúdo da pasta (as imagens)
@@ -264,7 +275,7 @@ class ClienteController {
                 numero: `${enderecoOBJ.numero}`
             })
         } catch (error) {
-            
+
         }
     }
 

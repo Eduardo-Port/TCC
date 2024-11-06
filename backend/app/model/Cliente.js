@@ -135,24 +135,18 @@ class Cliente {
         console.log(this.idCliente)
         try {
             // Verifica se a nova senha e a confirmação da senha coincidem
-            if (newPass == "" || confirmPass == "") {
-                console.error("Senhas não podem ser vazias.");
-                return false;
+            if(!this.senhaÉIgual(newPass, confirmPass)) {
+                return false
             }
-            console.log(newPass + " DISTANCIA " + confirmPass)
 
-            if (newPass !== confirmPass) {
-                console.error("Senhas não coincidem.");
-                return false;
-            }
             const newPassword = await bcrypt.hash(newPass, 10)
-            const confirmPassword = await bcrypt.hash(confirmPass, 10)
             // Substitui a senha no array de valores com o hash
             const values = [newPassword, this.idCliente];
             this.senha = newPassword
-            const values2 = [null, null, this.idCliente]
             // Executa a query para atualizar a senha no banco de dados
             await conn.query(sql, values);
+            values2 = [null, null, this.idCliente]
+            await conn.query(sql2, values2)
             //await conn.query(sql2, values2)
             console.log("Senha atualizada com sucesso.");
             return true;
@@ -160,6 +154,19 @@ class Cliente {
             console.error("Erro ao atualizar a senha:", error);
             return false;
         }
+    }
+
+    async senhaÉIgual(pass, confirmPass) {
+        if (pass == "" || confirmPass == "") {
+            console.error("Senhas não podem ser vazias.");
+            return false;
+        }
+
+        if (pass !== confirmPass) {
+            console.error("Senhas não coincidem.");
+            return false;
+        }
+        return true;
     }
 
     async findClientById(id) {
