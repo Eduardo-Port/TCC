@@ -1,47 +1,120 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.conteudo{
+.conteudo {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.m-vendidos{
+.m-vendidos {
     margin-top: 121px;
     width: 1536px;
     margin-bottom: 180px;
 }
 
-.m-vendidos .titulo{
+.m-vendidos .titulo {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     color: #004AAD;
     font-weight: bold;
 }
 
-.produtos{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 85px;
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 85px;
 }
 
-.produtos .box-produtos{
-    width: 324px;
-    height: 480px;
+.produtos .box-produtos {
+    width: 340px;
+    height: 513px;
     box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.200);
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: 1 / 4;
 }
 
-.buttom{
+.box-produtos img {
+    justify-self: center;
+}
+
+.text-m-vendidos {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-m-vendidos p {
+    width: 302px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+}
+
+.span-m-vendido {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 6px;
+    width: 60px;
+    height: 22px;
+    background: #004AAD;
+    border-radius: 7px;
+}
+
+.span-m-vendido .p-m-vendido {
+    line-height: 15px;
+    margin: 0;
+    color: white;
+    width: 48px;
+    height: 18px;
+    font-family: 'Arial';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.text-m-vendidos p {
+    margin: 6px 0px 0px 0px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.price-m-vendidos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.price-h1-m-vendidos {
+    width: 302px;
+    height: 33px;
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 44px;
+    color: #004AAD;
+    margin-top: 30px;
+}
+
+.promo-m-vendidos {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #838383;
+
+}
+
+.buttom {
     width: 450px;
     height: 80px;
     display: flex;
@@ -52,7 +125,7 @@
     margin-bottom: 115px;
 }
 
-.buttom a{
+.buttom a {
     width: 100%;
     height: 100%;
     display: flex;
@@ -67,11 +140,11 @@
 
 /* Categorias */
 
-.geral{
+.geral {
     display: flex;
 }
 
-.categorias p{
+.categorias p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     color: #004AAD;
@@ -82,10 +155,10 @@
 
 #sidebar {
     position: fixed;
-    top: 15.3vh;
+    top: 0vh;
     left: 0;
     z-index: 999;
-    max-width: 300px;
+    max-width: 350px;
     width: 80%;
     height: 100%;
     padding: 2rem;
@@ -137,9 +210,13 @@
     opacity: 1;
 }
 
+.logo-menu {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
 
 .sidebar_toggler {
-    position: fixed;
     top: 5vh;
     left: 4vw;
     width: 1.75rem;
@@ -148,7 +225,7 @@
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    overflow: hidden;   
+    overflow: hidden;
 }
 
 .sidebar_toggler span {
@@ -157,27 +234,9 @@
     height: 2.4px;
     transition: all 0.3s ease;
     pointer-events: none;
-
 }
 
-#sidebar.show + .sidebar_toggler {
-    justify-content: center;
-}
-
-#sidebar.show + .sidebar_toggler span {
-    margin-top: -1.2px;
-    margin-bottom: -1.2px;
-}
-
-#sidebar.show + .sidebar_toggler span:first-child {
-    transform: rotate(45deg);
-}
-
-#sidebar.show + .sidebar_toggler span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-100%);
-}
-
-#sidebar.show + .sidebar_toggler span:last-child {
-    transform: rotate(-45deg);
+.user-carrinho {
+    display: flex;
+    gap: 20px;
 }
