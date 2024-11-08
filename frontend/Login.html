@@ -42,40 +42,44 @@
             <p>&nbsp;Faça seu Login</p>
         </div>
 
-        <div class="input-login">
-            <input type="email" placeholder="E-mail" required id = 'email'>
-            <input type="password" placeholder="Senha" required id = 'password'> 
-        </div>
+        <form id="formLogin"  method="POST">
+            <div class="input-login">
+                <input type="email" id="email" name="email" placeholder="E-mail" required>
+                <input type="password" id="password" name="password" placeholder="Senha" required>
+            </div>
 
-        <div class="link-senha">
-            <button id="show-login">Esqueceu a Senha?</button>
-        </div>
+            <!-- Link para recuperação de senha -->
+            <div class="link-senha">
+                <button type="button" id="show-login">Esqueceu a Senha?</button>
+            </div>
 
-        <div class="popup">
-            <div class="close-btn">&times;</div>
-            <div class="form">
-                <p>Acesse a caixa de entrada do e-mail inserido para ter acesso ao link para recuperar sua senha.
-                </p>
-                <div class="form-element">
-                    <input type="email" id="email" placeholder="E-mail">
-                </div>
+            <!-- Pop-up de recuperação de senha -->
+            <div class="popup">
+                <div class="close-btn">&times;</div>
                 <div class="form">
-                    <button>Enviar</button>
+                    <p>Acesse a caixa de entrada do e-mail inserido para ter acesso ao link para recuperar sua senha.
+                    </p>
+                    <div class="form-element">
+                        <input type="email" id="email-recovery" placeholder="E-mail">
+                    </div>
+                    <div class="form">
+                        <button type="button">Enviar</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="line"></div>
+            <div class="line"></div>
 
-        <a href="Index.html" class="botao-entrar">
-            <div>
+            <!-- Botão de envio do formulário -->
+            <button type="submit" class="botao-entrar">
                 <p>Entrar</p>
-            </div>
-        </a>
+            </button>
+        </form>
         <div class="text-cadastro">
             <p>Não tem uma conta? <a href="Cadastro.html">Cadastre-se</a></p>
         </div>
     </div>
+
 
     <!-- Rodapé -->
     <div class="rodapezin">
@@ -86,4 +90,5 @@
     <div class="tudo"></div>
     <script src="./JS/login/login.js"></script>
 </body>
+
 </html>

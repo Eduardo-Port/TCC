@@ -138,20 +138,18 @@ option {
     margin-bottom: 16px;
 }
 
-.botao{
+.botao button{
     width: 310px;
     height: 47px;
 
     background-color: #004AAD;
     border-radius: 39px;
-
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
-}
 
-.botao a{
     text-decoration: none;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -162,11 +160,15 @@ option {
     color: #FFFFFF;
 }
 
-.voltar{
-    margin-bottom: 125px;
+.botao button:hover {
+    font-size: 23.5px;
+    width: 313px;
+    height: 49px;
 }
 
-.voltar a{
+.texto a{
+    margin-bottom: 125px;
+    margin-left: 1vh;
     text-decoration: none;
     color: #004AAD;
     font-family: Arial, Helvetica, sans-serif;
@@ -174,6 +176,27 @@ option {
     font-weight: 600;
 }
 
-.voltar a:hover{
+.texto a:hover{
     text-decoration: underline;
+    font-size: 14.5px;
+}
+
+.fim-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o contêiner de botão e texto */
+    gap: 10px;   
+    margin-bottom: 125px;        /* Ajusta o espaçamento entre o botão e o texto */
+}
+
+.fim-form .botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o botão */
+}
+
+.fim-form .texto {
+    align-self: flex-start; 
+    margin-top: 5px;/* Alinha o texto ao início do botão */
+    margin-left: 12%;        /* Ajuste de margem, se necessário */
 }

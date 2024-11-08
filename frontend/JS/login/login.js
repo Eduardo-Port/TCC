@@ -1,33 +1,29 @@
-const email = document.getElementById('email')
-const password = document.getElementById('password')
-const button = document.getElementsByClassName('bota-entrar')
+const form = document.getElementById('formLogin')
 
-button.addEventListener('click', async () => {
-  const formData = {
-    nome: nomeInput.value,
-    email: emailInput.value
-  }
-  try {
-    // Faz a requisição POST usando fetch
-    const response = await fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData) // Converte os dados para JSON
-    });
+form.addEventListener('submit', function(event) {
+  event.preventDefault()
 
-    // Verifica se a resposta foi bem-sucedida
-    if (response.ok) {
-      const data = await response.json();
-      console.log('Resposta do servidor:', data);
-      alert('Dados enviados com sucesso!');
-    } else {
-      console.error('Erro ao enviar dados:', response.statusText);
-      alert('Erro ao enviar os dados.');
-    }
-  } catch (error) {
-    console.error('Erro na requisição:', error);
-    alert('Erro ao enviar os dados.');
-  }
+  const formdata = new FormData(form)
+  const data = {}
+
+  formdata.forEach((value, key) => {
+    data[key] = value
+  })
+
+  fetch('http://localhost:3000/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('RESPOSTA')
+    window.location.href = '../Index.html'
+  })
+  .catch(error => {
+    console.error('erro: ', error)
+    alert('Ocorreu um erro ao enviar os dados')
+  })
 })

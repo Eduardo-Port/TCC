@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const clienteRouter = require('./app/routes/cliente_route')
 const path = require("path")
-app.use(cors())
+
 app.use(cors({
   origin: 'http://127.0.0.1:5500',
   method: ['GET', 'POST', 'PUT', 'DELETE'],

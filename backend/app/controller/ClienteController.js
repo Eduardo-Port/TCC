@@ -117,7 +117,7 @@ class ClienteController {
         try {
             const cliente = {
                 email: req.body.email,
-                senha: req.body.senha,
+                senha: req.body.password,
             }
 
             const clienteOBJ = new Cliente()

@@ -1,7 +1,7 @@
 const conn = require('../../bd/bd')
 //classe que carrega todos os atributos e métodos que uma entidade pode fazer, que se relacione ou não com o banco de dados
 class Complemento {
-    constructor(nome, descricao) {
+    constructor(nome) {
         this.idComplemento = null;
         this.nome = nome;
     }

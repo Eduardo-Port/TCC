@@ -30,6 +30,11 @@ body{
     text-decoration: none;
 }
 
+.voltar a:hover {
+    width: 160px;
+    font-size: 17.3px;
+}
+
 .tela{
     margin-top: 150px;
     height: 100%;
@@ -109,7 +114,13 @@ body{
     margin-bottom: 15px;
 }
 
-.botao-entrar div{
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botao-entrar{
     display: flex;
     flex-direction: row;
     justify-content: center;

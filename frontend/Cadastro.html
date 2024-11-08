@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,71 +10,83 @@
     <link rel="stylesheet" href="CSS/Rodapézin.css" type="text/css">
     <title>Cadastro</title>
 </head>
+
 <body>
-    
+
     <!-- Menu -->
     <div class="menuzin">
-        <a href="Index.html"><img src="Imagens/Icon_Logo_Menu2.png" width="165px" height="100px"></a>
+        <a href="Index.html"><img src="Imagens/Icon_Logo_Menu2.png" width="165px" height="100px" alt="Logo"></a>
     </div>
 
     <!-- Corpo -->
-     <div class="titulo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#004AAD" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
+    <div class="titulo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#004AAD" class="bi bi-person-plus-fill"
+            viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            <path fill-rule="evenodd"
+                d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
         </svg>
-    <p>&nbsp;&nbsp;Faça seu Login</p>
+        <p>&nbsp;&nbsp;Faça seu Login</p>
     </div>
-    <div class="acesso">
-        <p>Informações de Acesso</p>
-        <input type="email" placeholder="E-mail" required class = 'email'>
-        <input type="password" placeholder="Senha" required class = 'password'>
-        <input type="password" placeholder="Confirmar Senha" required class = 'confirmPassword'>
-    </div>
-    <div class="pessoais">
-        <p>Informações Pessoais</p>
-        <div class="juntos">
-            <input type="text" placeholder="Nome" required class = 'nome'>
-            <input type="text" placeholder="Sobrenome" required class = 'sobrenome'>
+
+    <form method="POST" id="formCadastro">
+        <div class="acesso">
+            <p>Informações de Acesso</p>
+            <input type="email" placeholder="E-mail" required class="email" name="email">
+            <input type="password" placeholder="Senha" required class="password" name="password">
+            <input type="password" placeholder="Confirmar Senha" required class="confirmPassword"
+                name="confirmPassword">
         </div>
-        <input type="text" placeholder="CPF: 99999999999" required class = 'cpf'>
-        <input type="date" placeholder="Data de Nascimento" required class = 'dataNascimento'>
-        <select required>
-            <option value="" disabled selected>Gênero</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Feminino">Feminino</option>
-            <option value="Outro">Outro</option>
-          </select>
-        <input type="text" placeholder="Telefone" required class = ''>
-    </div>
-    <div class="residenciais">
-        <p>Informações de Residência</p>
-        <input type="text" placeholder="Logradouro" required class = 'logradouro'>
-        <div class="juntos">
-            <input type="text" placeholder="Nº" required class = 'numero'>
-            <input type="text" placeholder="Completemento" required class = 'compl_nome'>
+
+        <div class="pessoais">
+            <p>Informações Pessoais</p>
+            <div class="juntos">
+                <input type="text" placeholder="Nome" required class="nome" name="nome">
+                <input type="text" placeholder="Sobrenome" required class="sobrenome" name="sobrenome">
+            </div>
+            <input type="text" placeholder="CPF: 99999999999" required class="cpf" name="cpf">
+            <!--
+            <input type="date" placeholder="Data de Nascimento" required class="dataNascimento" name="dataNascimento">
+            <select required name="genero">
+                <option value="" disabled selected>Gênero</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+            </select>
+            <input type="text" placeholder="Telefone" required class="telefone" name="telefone">
+            -->
         </div>
-        <div class="juntos">
-            <input type="text" placeholder="Bairro" required class = 'bairro'>
-            <input type="text" placeholder="CEP" required class = 'cep'>
+
+        <div class="residenciais">
+            <p>Informações de Residência</p>
+            <input type="text" placeholder="Logradouro" required class="logradouro" name="logradouro">
+            <div class="juntos">
+                <input type="text" placeholder="Nº" required class="numero" name="numero">
+                <input type="text" placeholder="Complemento" class="complemento" name="complemento">
+            </div>
+            <div class="juntos">
+                <input type="text" placeholder="Bairro" required class="bairro" name="bairro">
+                <input type="text" placeholder="CEP" required class="cep" name="cep">
+            </div>
         </div>
-    </div>
-    <div class="line"></div>
-    <a href="#">
-        <div class="botao">
-            <a href="#">
-                <p>Cadastrar</p>
-            </a>
+
+        <div class="line"></div>
+        <div class="fim-form">
+            <div class="botao">
+                <button type="submit">Cadastrar</button>
+            </div>
+            <div class="texto">
+                <a href="Index.html">Voltar ao Início</a>
+            </div>
         </div>
-    </a>
-    <div class="voltar">
-        <a href="Index.html">Voltar ao Início</a>
-    </div>
+    </form>
 
     <!-- Rodapé -->
     <div class="rodapezin">
-        <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo - CEP:08554-080</p>
+        <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | São Paulo -
+            CEP:08554-080</p>
     </div>
-
+    <script src="./JS/cadastro/cadastro.js"></script>
 </body>
+
 </html>
