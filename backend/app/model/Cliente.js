@@ -106,10 +106,10 @@ class Cliente {
         })
     }
 
-    async verificaResetToken(email, token, validade) {
+    async verificaResetToken(token, validade) {
         try {
-            const sql = `SELECT id_cliente as id, cli_email as email, token_reset_senha as token, data_expired_token as token_expired FROM Cliente WHERE cli_email = ?;`
-            const values = [email]
+            const sql = `SELECT id_cliente as id, cli_email as email, token_reset_senha as token, data_expired_token as token_expired FROM Cliente WHERE token_reset_senha = ?;`
+            const values = [token]
             const [rows] = await conn.query(sql, values)
             if (rows.length > 0) {
                 this.idCliente = rows[0].id
@@ -145,7 +145,7 @@ class Cliente {
             this.senha = newPassword
             // Executa a query para atualizar a senha no banco de dados
             await conn.query(sql, values);
-            values2 = [null, null, this.idCliente]
+            const values2 = [null, null, this.idCliente]
             await conn.query(sql2, values2)
             //await conn.query(sql2, values2)
             console.log("Senha atualizada com sucesso.");

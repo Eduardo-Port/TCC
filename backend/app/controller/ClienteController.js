@@ -1,3 +1,5 @@
+//lico doig loyl cvwn
+
 const cript = require('bcrypt')
 const Cliente = require("../model/Cliente")
 const Endereco = require('../model/Endereco')
@@ -176,11 +178,11 @@ class ClienteController {
             await clienteOBJ.adicionaTokenELimitePorId(token, validade, idCliente)
             //obj de informações do envio do email
             let mailOptions = {
-                from: 'edu.friv10@gmail.com',
+                from: 'codeux.etec@gmail.com',
                 to: `${email}`,
-                subject: "sepa deu certo",
+                subject: "Recuperação de senha na TBMServCOM",
                 text: 'Corpo do email',
-                html: `<h1>teste</h1><p>Usando nomeailer com STARTTLS ${token}</p>`
+                html: `<h1>Recupere sua senha acessando o link abaixo</h1><p><a href="http://127.0.0.1:5500/frontend/Redefinir_Senha.html?tk=${token}">Clique aqui para redefinir sua senha</a></p>`
             }
             //enviar email
             transporter.sendMail(mailOptions, function (error, info) {
@@ -195,18 +197,19 @@ class ClienteController {
             //enviarEmail(email, 'edu.friv10@gmail.com', 'Recuperação de senha', `deu ruim mermao fe deu certo ${clienteOBJ.senhaResetToken}`)
             res.status(200).send({ clienteOBJ })
         } catch (error) {
+            console.log("ta dando erro aq eduardo")
             res.status(400).send({ error: error })
         }
     }
 
     async recuperarSenha(req, res) {
         try {
-            const { email, token, newPassword, confirmPassword } = req.body
+            const {token, newPassword, confirmPassword } = req.body
             console.log(newPassword + " DISTANCIA " + confirmPassword)
 
             const clienteOBJ = new Cliente()
             const now = getCurrentTime(0)
-            const tokenIsValid = await clienteOBJ.verificaResetToken(email, token, now)
+            const tokenIsValid = await clienteOBJ.verificaResetToken(token, now)
             if (!tokenIsValid) {
                 return res.status(400).send({ error: "Token inválido" })
             }
@@ -275,13 +278,12 @@ class ClienteController {
                 numero: `${enderecoOBJ.numero}`
             })
         } catch (error) {
-
+            return error
         }
     }
 
     async deletarCliente(req, res) {
         const idCliente = req.clienteInfo.idCliente
-
         try {
             const clienteOBJ = new Cliente()
             await clienteOBJ.deletarCliente(idCliente)
