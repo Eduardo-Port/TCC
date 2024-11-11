@@ -20,17 +20,14 @@
     <div class="tela">
         <p>Redefinir Senha</p>
         <div class="input">
-            <input type="email" placeholder="E-mail" required>
+            <input type="password" name="newPassword" placeholder="Nova Senha" required id="pass">
         </div>
         <div class="input">
-            <input type="password" placeholder="Nova Senha" required>
-        </div>
-        <div class="input">
-            <input type="password" placeholder="Confirmar Senha" required id="last">
+            <input type="password" name="confirmPassword" placeholder="Confirmar Senha" required id="last">
         </div>
         <div class="line"></div>
         <div class="botao">
-            <button type="button">Alterar</button>
+            <button id="button-alter" type="button">Alterar</button>
         </div>
         
     </div>
@@ -39,6 +36,8 @@
      <div class="rodapezin">
         <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo - CEP:08554-080</p>
     </div>
+
+    <script src="./JS/login/recuperar_senha.js"></script>
 
 </body>
 </html>

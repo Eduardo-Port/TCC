@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <!-- Menu -->
     <div class="menuzin">
         <a href="Index.html"><img src="Imagens/Icon_Logo_Menu2.png" width="165px" height="100px" alt="Logo"></a>
@@ -26,25 +25,38 @@
             <path fill-rule="evenodd"
                 d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
         </svg>
-        <p>&nbsp;&nbsp;Faça seu Login</p>
+        <p>&nbsp;&nbsp;Faça seu cadastro</p>
     </div>
 
     <form method="POST" id="formCadastro">
         <div class="acesso">
             <p>Informações de Acesso</p>
-            <input type="email" placeholder="E-mail" required class="email" name="email">
-            <input type="password" placeholder="Senha" required class="password" name="password">
-            <input type="password" placeholder="Confirmar Senha" required class="confirmPassword"
-                name="confirmPassword">
+            <div class="wrap-input">
+                <input type="email" placeholder="E-mail" class="form-content" name="email" id="email" required>
+            </div>
+            <div class="wrap-input">
+                <input type="password" placeholder="Senha" required class="form-content" name="password" id="password">
+            </div>
+            <div class="wrap-input">
+                <input type="password" placeholder="Confirmar Senha" required class="form-content"
+                    name="confirmPassword" id="password-confirmation">
+            </div>
         </div>
 
         <div class="pessoais">
             <p>Informações Pessoais</p>
             <div class="juntos">
-                <input type="text" placeholder="Nome" required class="nome" name="nome">
-                <input type="text" placeholder="Sobrenome" required class="sobrenome" name="sobrenome">
+                <div class="wrap-input">
+                    <input type="text" placeholder="Nome" required class="form-content" name="nome" id="username">
+                </div>
+                <div class="wrap-input">
+                    <input type="text" placeholder="Sobrenome" required class="form-content" name="sobrenome"
+                    id="surname">
+                </div>
             </div>
-            <input type="text" placeholder="CPF: 99999999999" required class="cpf" name="cpf">
+            <div class="wrap-input">
+                <input type="text" placeholder="CPF: 123.456.789-00" required class="form-content" name="cpf" id="cpf" maxlength="14">
+            </div>
             <!--
             <input type="date" placeholder="Data de Nascimento" required class="dataNascimento" name="dataNascimento">
             <select required name="genero">
@@ -56,17 +68,35 @@
             <input type="text" placeholder="Telefone" required class="telefone" name="telefone">
             -->
         </div>
-
         <div class="residenciais">
             <p>Informações de Residência</p>
-            <input type="text" placeholder="Logradouro" required class="logradouro" name="logradouro">
             <div class="juntos">
-                <input type="text" placeholder="Nº" required class="numero" name="numero">
-                <input type="text" placeholder="Complemento" class="complemento" name="complemento">
+                <div class="wrap-input">
+                    <input type="text" placeholder="CEP" required name="cep" id="cep" maxlength="9">                                           
+                </div>
+                <div class="wrap-input">
+                    <input type="text" placeholder="Cidade" required class="form-content" name="cidade" id="cidade">
+                </div>
             </div>
+
+            <div class="wrap-input">
+                <input type="text" placeholder="Bairro" required class="form-content" name="bairro" id="bairro">
+            </div>
+            
+            <div class="wrap-input">
+                <input type="text" placeholder="Logradouro" required class="form-content" name="logradouro"
+                id="logradouro">              
+            </div>
+            
             <div class="juntos">
-                <input type="text" placeholder="Bairro" required class="bairro" name="bairro">
-                <input type="text" placeholder="CEP" required class="cep" name="cep">
+                <div class="wrap-input">
+                    <input type="text" placeholder="Nº" required class="form-content" name="numero" id="numero-end">
+                    
+                </div>
+                <div class="wrap-input">
+                    <input type="text" placeholder="Complemento" class="form-content" name="complemento"
+                    id="complemento">        
+                </div>
             </div>
         </div>
 
