@@ -4,6 +4,7 @@ const cript = require('bcrypt')
 const Cliente = require("../model/Cliente")
 const Endereco = require('../model/Endereco')
 const Complemento = require('../model/Complemento')
+const Produto = require('../model/Produto.js')
 const conn = require('../../bd/bd.js')
 const jwt = require('jsonwebtoken')
 const crypto = require("crypto")
@@ -123,10 +124,12 @@ class ClienteController {
             }
 
             const clienteOBJ = new Cliente()
+            const enderecoOBJ = new Endereco()
             //se o retorno da função for falso, o cliente não existe, então o usuario não é encontrado
             if (!await clienteOBJ.clienteExiste(cliente.email, cliente.senha)) {
                 return res.status(401).send({ error: "Usuário não encontrado" })
             }
+            enderecoOBJ.obterEnderecoCliente()
             const idCliente = clienteOBJ.idCliente
             const nome = clienteOBJ.nome
             const sobrenome = clienteOBJ.sobrenome
@@ -134,7 +137,6 @@ class ClienteController {
             const email = clienteOBJ.email
             const role = clienteOBJ.role
             const senha = clienteOBJ.senha
-
             //caso o usuário seja encontrado, o programa irá retornar o id e o token gerado para esse id
             return res.status(200).send({
                 clienteOBJ,
@@ -145,7 +147,12 @@ class ClienteController {
                     cpf: cpf,
                     email: email,
                     role: role,
-                    senha: senha
+                    senha: senha,
+                    cepCliente: enderecoOBJ.cep,
+                    cidadeCliente: enderecoOBJ.cidade,
+                    bairroCliente: enderecoOBJ.bairro,
+                    logradouroCliente: enderecoOBJ.rua,
+                    numeroCliente: enderecoOBJ.numero   
                 })
             })
         } catch (error) {
@@ -204,7 +211,7 @@ class ClienteController {
 
     async recuperarSenha(req, res) {
         try {
-            const {token, newPassword, confirmPassword } = req.body
+            const { token, newPassword, confirmPassword } = req.body
             console.log(newPassword + " DISTANCIA " + confirmPassword)
 
             const clienteOBJ = new Cliente()
@@ -226,6 +233,16 @@ class ClienteController {
             console.error(error)
         }
 
+    }
+
+    async listaTodosProdutos(req, res) {
+        const produto = new Produto();
+        try {
+            const produtos = await produto.listaTodosProdutos();
+            return res.status(200).json(produtos);
+        } catch (error) {
+            return res.status(500).json({ message: "Erro ao listar produtos com imagem", error });
+        }
     }
 
     listaImagensProduto(req, res) {
@@ -292,6 +309,27 @@ class ClienteController {
         }
     }
 
+    async atualizarCliente(req, res) {
+        const idCliente = req.clienteInfo.idCliente
+        const nome = req.body.nome
+        const sobrenome = req.body.sobrenome
+        
+        const cliente = new Cliente()
+        try {
+            const sucesso = await cliente.atualizarDadosCliente(nome, sobrenome, idCliente)
+            if(sucesso) {
+                return res.status(200).json({mensagem: "Cliente atualizado com sucesso."})
+            } else {
+                return res.status(404).json({mensagem: "Cliente não encontrado"})
+            }
+        } catch (error) {
+            return res.status(500).json({error: "Erro ao atualizar dados do Cliente"})
+        }
+    }
+
+    async atualizarEnderecoCliente(req, res) {
+        
+    }
 };
 
 module.exports = ClienteController

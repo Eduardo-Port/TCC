@@ -1,0 +1,215 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#submenu {
+    margin-bottom: 62px;
+}
+
+#carouselExampleInterval {
+    width: 80%;        /* Ajuste a largura conforme necessário */
+    max-width: 1052px;  /* Largura máxima opcional */
+    height: 215px;     /* Ajuste a altura conforme necessário */
+    margin: 0 auto;    /* Centraliza o carrossel na página */
+    overflow: hidden;
+    object-fit: fill;
+}
+
+.carousel-inner img {
+    height: 100%;         /* Ajusta a altura da imagem ao contêiner */
+    object-fit: cover;     /* Cobre o contêiner mantendo a proporção */
+    border-radius: 25px;
+}
+
+
+#main {
+    border: 1px solid blue;
+    max-width: 1052px;
+    margin: 0 auto;
+    margin-top: 52px;
+}
+
+/*DROPDOWN*/
+.dropdowns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown {
+    height: 46px;
+    width: 181px;
+    position: relative;
+    margin: 2em;
+}
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    background-color: #fff;
+    color: #004AAD;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #004AAD;
+    border-radius: 15px;
+    height: 100%;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.select-clicked  {
+     border: 2px #004AAD solid;
+     box-shadow: 0 0 0.1em #004AAD;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    margin-right: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #004AAD;
+    transition: 0.3s;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background-color: #fff;
+    border: 1px #004bad solid;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    color: #004AAD;
+    position: absolute;
+    top: 3.3em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transform: 0.2s;
+    z-index: 1;
+}
+
+.menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    border: 1px solid #004AAD;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+/*FIM DROPDOWN*/
+
+/*PRODUTOS*/
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 30px;
+    width: 1052px; /* Ajuste a largura conforme necessário */
+}
+
+.box-produtos {
+    height: 513px;
+    overflow: hidden;
+    box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.200);
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.wrap-preco {
+    align-self: flex-end;
+}
+
+.box-produtos img {
+    justify-self: center;
+}
+
+.text-m-vendidos {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-m-vendidos p {
+    width: 302px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+}
+
+.span-m-vendido {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 6px;
+    width: 60px;
+    height: 22px;
+    background: #004AAD;
+    border-radius: 7px;
+}
+
+.span-m-vendido .p-m-vendido {
+    line-height: 15px;
+    margin: 0;
+    color: white;
+    width: 48px;
+    height: 18px;
+    font-family: 'Arial';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.text-m-vendidos p {
+    margin: 6px 0px 0px 0px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.price-m-vendidos {
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.price-h1-m-vendidos {
+    width: 302px;
+    height: 33px;
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 44px;
+    color: #004AAD;
+    margin-top: 30px;
+}
+
+.promo-m-vendidos {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #838383;
+
+}
