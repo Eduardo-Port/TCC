@@ -152,7 +152,7 @@ class ClienteController {
                     cidadeCliente: enderecoOBJ.cidade,
                     bairroCliente: enderecoOBJ.bairro,
                     logradouroCliente: enderecoOBJ.rua,
-                    numeroCliente: enderecoOBJ.numero   
+                    numeroCliente: enderecoOBJ.numero
                 })
             })
         } catch (error) {
@@ -245,10 +245,11 @@ class ClienteController {
         }
     }
 
-    listaImagensProduto(req, res) {
+    async exibeUmProduto(req, res) {
         const productId = req.params.id;
         const productFolderPath = path.join(__dirname, '../../upload', `produto_${productId}`);
-
+        const produtoOBJ = new Produto();
+        const produtin = await produtoOBJ.preencheProduto(productId)
         // Verifica se a pasta do produto existe
         fs.access(productFolderPath, fs.constants.F_OK, (err) => {
             if (err) {
@@ -269,30 +270,33 @@ class ClienteController {
                     return `${req.protocol}://${req.get('host')}/upload/produto_${productId}/${file}`;
                 });
 
-                return res.status(200).json({ images: imageUrls });
+                return res.status(200).json({
+                    produto: produtin,
+                    images: imageUrls
+                });
             });
         });
     }
 
     async dataCliente(req, res) {
         const idCliente = req.clienteInfo.idCliente
-        const clienteOBJ = new Cliente()
         try {
-            clienteOBJ.findClientById(idCliente)
             const nome = req.clienteInfo.nomeCliente
             const sobrenome = req.clienteInfo.sobrenomeCliente
             const cpf = req.clienteInfo.cpfCliente
-            const role = req.clienteInfo.roleCliente
+            const email = req.clienteInfo.emailCliente
             const enderecoOBJ = new Endereco()
             await enderecoOBJ.obterEnderecoCliente(idCliente)
             return res.status(200).send({
                 nome: `${nome}`,
                 sobrenome: `${sobrenome}`,
+                email: `${email}`,
                 cpf: `${cpf}`,
-                role: `${role}`,
-                cidade: `${enderecoOBJ.cidade}`,
-                cep: `${enderecoOBJ.bairro}`,
-                numero: `${enderecoOBJ.numero}`
+                logradouro: `${enderecoOBJ.rua}`,
+                cep: `${enderecoOBJ.cep}`,
+                numero: `${enderecoOBJ.numero}`,
+                bairro: `${enderecoOBJ.bairro}`,
+                cidade: `${enderecoOBJ.cidade}`
             })
         } catch (error) {
             return error
@@ -313,22 +317,22 @@ class ClienteController {
         const idCliente = req.clienteInfo.idCliente
         const nome = req.body.nome
         const sobrenome = req.body.sobrenome
-        
+
         const cliente = new Cliente()
         try {
             const sucesso = await cliente.atualizarDadosCliente(nome, sobrenome, idCliente)
-            if(sucesso) {
-                return res.status(200).json({mensagem: "Cliente atualizado com sucesso."})
+            if (sucesso) {
+                return res.status(200).json({ mensagem: "Cliente atualizado com sucesso." })
             } else {
-                return res.status(404).json({mensagem: "Cliente não encontrado"})
+                return res.status(404).json({ mensagem: "Cliente não encontrado" })
             }
         } catch (error) {
-            return res.status(500).json({error: "Erro ao atualizar dados do Cliente"})
+            return res.status(500).json({ error: "Erro ao atualizar dados do Cliente" })
         }
     }
 
     async atualizarEnderecoCliente(req, res) {
-        
+
     }
 };
 

@@ -60,6 +60,8 @@ function ClienteRoutes(app) {
   app.get('/listar_produtos', 
     (req, res) => clienteController.listaTodosProdutos(req, res)
   )
+
+  app.get('/exibe_produto/:id', clienteController.exibeUmProduto)
   
   app.get('/minha_conta',
     (req, res, next) => authService.authenticate(req, res, next),

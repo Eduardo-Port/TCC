@@ -1,11 +1,11 @@
 document.querySelector("#show-login").addEventListener("click", function(){
-    document.querySelector(".popup").classList.add("active");
+    document.querySelector(".popup").classList.add("active")
     document.querySelector('.tudo').style.display = "block"
 });
 
 function closePopUp() {
-    document.querySelector(".popup").classList.remove("active");
-    document.querySelector('body').style.background = "white";
+    document.querySelector(".popup").classList.remove("active")
+    document.querySelector('body').style.background = "white"
     document.querySelector('.tudo').style.display = "none"
 }
 document.querySelector(".popup .close-btn").addEventListener("click", function(){
@@ -14,9 +14,9 @@ document.querySelector(".popup .close-btn").addEventListener("click", function()
 
 document.querySelector('.popup button').addEventListener('click', function(e) {
     e.preventDefault()
-    const email = document.getElementById('email-recovery').value;
+    const email = document.getElementById('email-recovery').value
     const data = {email}
-    console.log('E-mail inserido:', email);
+    console.log('E-mail inserido:', email)
 
     fetch('http://localhost:3000/esqueceu_senha', {
         method: 'POST',
