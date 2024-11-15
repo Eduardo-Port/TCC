@@ -56,6 +56,12 @@ function ClienteRoutes(app) {
     upload.array('file', 10),
     (req, res) => adminController.uploadImagensProduto(req, res)
   )
+
+  app.get('/listar_produtos', 
+    (req, res) => clienteController.listaTodosProdutos(req, res)
+  )
+
+  app.get('/exibe_produto/:id', clienteController.exibeUmProduto)
   
   app.get('/minha_conta',
     (req, res, next) => authService.authenticate(req, res, next),

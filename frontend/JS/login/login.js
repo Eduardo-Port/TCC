@@ -6,7 +6,6 @@ form.addEventListener('submit', function (event) {
 
   const formdata = new FormData(form)
   const data = {}
-
   formdata.forEach((value, key) => {
     data[key] = value
   })
@@ -26,7 +25,7 @@ form.addEventListener('submit', function (event) {
       }
     })
     .then(data => {
-      console.log(data)
+      localStorage.setItem('token', `${data.token}`);
       location.href = './Index.html'
     })
     .catch(error => {

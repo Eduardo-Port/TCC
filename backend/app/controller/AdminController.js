@@ -9,7 +9,9 @@ class AdminController {
         try {
             //instancia feita apenas para descobrir o id da categoria enviada
             const achadorDeCategoria = new Produto()
+            console.log("A CATEGORIA DO PRODUTO É: ", categoria)
             const idCategoria = await achadorDeCategoria.descobreIdCategoria(categoria)
+            console.log("A CATEGORIA DO PRODUTO É: ", idCategoria)
             const produto = new Produto(idCategoria, nome, preco, ficha)
             //verificação da categoria
             if (await produto.categoriaExiste(categoria)) {
@@ -47,7 +49,7 @@ class AdminController {
             if (statusAtual === undefined) {
                 return res.status(404).json({ message: "Produto não encontrado" })
             }
-            const novoStatus = await produto.mudarStatusProduto(statusAtual)
+            const novoStatus = await produto.mudarStatusProduto(statusAtual, produto.idProduto)
             return res.status(201).json({ message: "Status do produto atualizado", novoStatus })
         } catch (error) {
             return res.status(500).json({ message: "Erro ao atualizar status do produto: ", error: error.message })

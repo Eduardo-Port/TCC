@@ -1,0 +1,243 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial';
+}
+
+main {
+    width: 1418px;
+    margin: 0 auto;
+}
+
+.info-produto {
+    max-width: 1223px;
+    margin: 135px auto;
+}
+
+.image-produto {
+    width: 439px;
+    height: 434px;
+    margin-top: 35px;
+}
+
+.wrap-produto-venda {
+    margin-top: 135px;
+    display: flex;
+    gap: 230px;
+}
+
+.nome-produto {
+    font-family: 'Arial';
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    color: rgba(0, 47, 111, 0.85);
+}
+
+.wrap-other-images {
+    width: 450px;
+    height: 102px;
+    display: flex;
+    gap: 20px;
+}
+
+.other-images-real {
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.25));
+    width: 102px;
+    height: 102px;
+    object-fit: cover;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding: 1px;
+}
+
+.other-images:hover {
+    cursor: pointer;
+}
+
+.other-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.other-images-select {
+    border: 2px solid #004AAD;
+    overflow: hidden;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.other-images-select img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.pag-produto {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.oferta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 6px;
+    gap: 10px;
+    width: 60px;
+    height: 22px;
+    background: #004AAD;
+    border-radius: 7px;
+}
+
+.oferta p {
+    color: white;
+    width: 48px;
+    height: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.preco-parcela {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.preco-produto {
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 52px;
+    color: #004AAD;
+}
+
+.parcela-produto {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    color: #707070;
+}
+
+.button-buy {
+    display: flex;
+    gap: 12px;
+}
+
+.button-comprar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 96px;
+    gap: 10px;
+    background: #004095;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-buy input {
+    width: 70px;
+    height: 57px;
+    text-align: center;
+    padding-left: 10px;
+    font-size: 16px;
+    border: 1px solid #004095;
+    color: #004095;
+    border-radius: 10px;
+}
+
+
+.button-buy input:focus {
+    outline: none;
+    border: 1px solid #004095;
+        border-radius: 10px;
+}
+
+.button-comprar span {
+    width: 183px;
+    height: 29px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.linha-botao {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    width: 486px;
+    border: 1px solid rgba(0, 74, 173, 0.5);
+}
+
+.frete {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.frete p {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    color: #707070;
+}
+
+.frete h3 {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 26px;
+    color: #004095;
+}
+
+.info-tec {
+    width: 1418px;
+    background-color: #004095;
+    margin-top: 151px;
+    color: white;
+    padding: 33px 32px;
+}
+
+.wrap-content {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.options-info {
+    display: flex;
+    gap: 85px;
+}
+
+.info-product {
+    border-bottom: 2px solid white;
+}
+
+.title {
+    width: 100%;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.all-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: justify;
+    color: #ffffffe5;
+}

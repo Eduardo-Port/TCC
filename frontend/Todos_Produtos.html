@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="Imagens/Icon_Logo.png">
     <link rel="stylesheet" href="CSS/Menu.css" type="text/css">
-    <link rel="stylesheet" href="CSS/Index.css" type="text/css">
     <link rel="stylesheet" href="CSS/Rodapé.css" type="text/css">
+    <link rel="stylesheet" href="CSS/TodosProdutos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Produtos</title>
+    <link rel="stylesheet" href="CSS/Dropdown.css">
+    <title>Todos os Produtos</title>
 </head>
 
 <body>
-
     <!-- Menu -->
     <ul id="menu">
         <aside id="sidebar">
@@ -50,9 +49,9 @@
         <div class="logo-menu">
             <div class="sidebar_toggler">
                 <!-- <li style="margin-right: 34px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="31" fill="#004AAD" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
-            </li> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="31" fill="#004AAD" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
+                </li> -->
                 <span></span>
                 <span></span>
                 <span></span>
@@ -71,7 +70,7 @@
                         style="border-radius: 11px;"></div>
             </div>
         </li>
-        
+
         <div class="user-carrinho">
             <li class="nav-item-dropdown">
                 <img src="icons/user.svg" alt="Ícone de usuário">
@@ -89,7 +88,7 @@
     </ul>
     <!-- Menu -->
 
-    <!-- Carrosel de Imagens -->
+    <!-- Carrossel -->
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
@@ -123,107 +122,133 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <!-- Carrosel de Imagens -->
+    <!-- Carrossel -->
 
-    <!-- Produtos mais vendidos -->
-    <div class="conteudo">
-        <div class="m-vendidos">
-            <p class="titulo"> Mais Vendidos </p>
-            <div class="produtos">
+    <!-- MAIN -->
+    <main id="main">
 
-                <div class="box-produtos">
-                    <img src="icons/geladeiravendida.svg" alt="">
-                    <div class="text-m-vendidos">
-                        <span class="span-m-vendido">
-                            <p class="p-m-vendido">Oferta</p>
-                        </span>
-                        <p>Geladeira Brastemp 554 Litros - 220V</p>
-                    </div>
-                    <div class="price-m-vendidos">
-                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                    </div>
+        <div class="dropdowns">
+            <div class="dropdown">
+                <div class="select">
+                    <span class="selected">Categorias</span>
+                    <div class="caret"></div>
                 </div>
-
-
-                <div class="box-produtos">
-                    <img src="icons/maquinavendida.svg" alt="">
-                    <div class="text-m-vendidos">
-                        <span class="span-m-vendido">
-                            <p class="p-m-vendido">Oferta</p>
-                        </span>
-                        <p>Máquina de Lavar Samsung 11kg</p>
-                    </div>
-                    <div class="price-m-vendidos">
-                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                    </div>
+                <ul class="menu">
+                    <li>test</li>
+                    <li>test</li>
+                    <li>test</li>
+                    <li class="active">test</li>
+                    <li>teste</li>
+                </ul>
+            </div>
+<!--
+            <div class="dropdown">
+                <div class="select">
+                    <span class="selected">Categorias</span>
+                    <div class="caret"></div>
                 </div>
+                <ul class="menu">
+                    <li>test</li>
+                    <li>test</li>
+                    <li>test</li>
+                    <li class="active">test</li>
+                    <li>teste</li>
+                </ul>
+            </div>-->
+        </div>
 
-
-
-                <div class="box-produtos">
-                    <img src="icons/pecavendida.svg" alt="">
-                    <div class="text-m-vendidos">
-                        <span class="span-m-vendido">
-                            <p class="p-m-vendido">Oferta</p>
-                        </span>
-                        <p>Peça para Lavadora Agitador 10kg</p>
-                    </div>
-                    <div class="price-m-vendidos">
-                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                    </div>
+        <section class="produtos">
+            <div class="box-produtos">
+                <img src="icons/geladeiravendida.svg" alt="" class="imagem">
+                <div class="text-m-vendidos">
+                    <span class="span-m-vendido">
+                        <p class="p-m-vendido">Oferta</p>
+                    </span>
+                    <p class="nome-vendido">Geladeira Brastemp 554 Litros - 220V</p>
                 </div>
-
-
-                <div class="box-produtos">
-                    <img src="icons/arvendido.svg" alt="">
-                    <div class="text-m-vendidos">
-                        <span class="span-m-vendido">
-                            <p class="p-m-vendido">Oferta</p>
-                        </span>
-                        <p>Ar Condicionado Split Dual Inverter Hi Wall LG Voice ArtCool 18000 BTUs Frio Só 220V</p>
-                    </div>
-                    <div class="price-m-vendidos">
-                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                    </div>
+                <div class="price-m-vendidos">
+                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
                 </div>
             </div>
-        </div>
-        <!-- Produtos mais vendidos -->
 
-        <!-- Botão de mais produtos -->
-        <div class="buttom">
-            <a href="./Todos_Produtos.html">Mais Produtos</a>
-        </div>
-        <!-- Botão de mais produtos -->
 
-        <!-- Categorias -->
-        <div class="categorias">
-            <p> Categorias </p>
-            <div class="geral">
-                <div class="vertical">
-                    <a href="#"><img src="Imagens/Categoria_Geladeiras.png" width="398px" height="621px"
-                            style="margin-right: 83px;"></a>
+            <div class="box-produtos">
+                <img src="icons/maquinavendida.svg" alt="" class="imagem">
+                <div class="text-m-vendidos">
+                    <span class="span-m-vendido">
+                        <p class="p-m-vendido">Oferta</p>
+                    </span>
+                    <p>Máquina de Lavar Samsung 11kg</p>
                 </div>
-                <div class="horizontal">
-                    <a href="#"><img src="Imagens/Categoria_ArCondicionado.png" width="876px" height="289px"
-                            style="margin-bottom: 68px;"></a>
-                    <div class="cate-junt">
-                        <a href="#"><img src="Imagens/Categoria_Lavadoras.png" width="397px" height="264px"
-                                style="margin-right: 82px;"></a>
-                        <a href="#"><img src="Imagens/Categoria_Peças.png" width="397px" height="264px"></a>
-                    </div>
+                <div class="price-m-vendidos">
+                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
                 </div>
             </div>
-        </div>
 
-    </div>
 
+
+            <div class="box-produtos">
+                <img src="icons/pecavendida.svg" alt="" class="imagem">
+                <div class="text-m-vendidos">
+                    <span class="span-m-vendido">
+                        <p class="p-m-vendido">Oferta</p>
+                    </span>
+                    <p>Peça para Lavadora Agitador 10kg</p>
+                </div>
+                <div class="price-m-vendidos">
+                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                </div>
+            </div>
+
+
+            <div class="box-produtos">
+                <img src="icons/arvendido.svg" alt="" class="imagem">
+                <div class="text-m-vendidos">
+                    <span class="span-m-vendido">
+                        <p class="p-m-vendido">Oferta</p>
+                    </span>
+                    <p>Ar Condicionado Split Dual Inverter Hi Wall LG Voice ArtCool 18000 BTUs Frio Só 220V</p>
+                </div>
+                <div class="price-m-vendidos">
+                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                </div>
+            </div>
+            <div class="box-produtos">
+                <img src="icons/geladeiravendida.svg" alt="" class="imagem">
+                <div class="text-m-vendidos">
+                    <span class="span-m-vendido">
+                        <p class="p-m-vendido">Oferta</p>
+                    </span>
+                    <p>Geladeira Brastemp 554 Litros - 220V</p>
+                </div>
+                <div class="price-m-vendidos">
+                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                </div>
+            </div>
+
+            <div class="box-produtos">
+                <img src="icons/geladeiravendida.svg" alt="" class="imagem">
+                <div class="text-m-vendidos">
+                    <span class="span-m-vendido">
+                        <p class="p-m-vendido">Oferta</p>
+                    </span>
+                    <p>Geladeira Brastemp 554 Litros - 220V</p>
+                </div>
+                <div class="price-m-vendidos">
+                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Fim Main -->
     <!-- Rodapé -->
-
     <div class="p-rodape">
         <div>
             <h3>Categorias</h3>
@@ -263,6 +288,8 @@
     </div>
 
     <script src="JS/Navbar.js"></script>
+    <script src="./JS/Dropdown.js"></script>
+    <script src="JS/todosProdutos/todosProdutos.js"></script>
 </body>
 
 </html>

@@ -68,3 +68,93 @@
 #submenu li:nth-child(3){
     margin-right: 85px;
 }
+
+/* Menu Lateral */
+
+#sidebar {
+    position: fixed;
+    top: 0vh;
+    left: 0;
+    z-index: 999;
+    max-width: 350px;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    box-shadow: 0 10px 20px -4px #000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease, visibility 0.2s ease, transform 0.3s ease;
+    background: #fff;
+}
+
+
+#sidebar.show {
+    pointer-events: all;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.sidebar_content {
+    padding: 2.8rem 0;
+    pointer-events: none;
+}
+
+.sidebar_content a {
+    pointer-events: all;
+}
+
+.sidebar_body {
+    border-top: 1px dashed var(--text-color);
+    border-bottom: 1px dashed var(--text-color);
+}
+
+.side_navlinks ul {
+    display: grid;
+    gap: 2rem;
+}
+
+.side_navlinks li a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.side_navlinks a:hover {
+    opacity: 1;
+}
+
+.logo-menu {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.sidebar_toggler {
+    top: 5vh;
+    left: 4vw;
+    width: 1.75rem;
+    height: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.sidebar_toggler span {
+    background-color: #004AAD;
+    width: 100%;
+    height: 2.4px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.user-carrinho {
+    display: flex;
+    gap: 20px;
+}

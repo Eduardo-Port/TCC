@@ -1,48 +1,66 @@
-* {
-    padding: 0;
+html, body {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial';
 }
 
-.conteudo {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#submenu {
+    margin-bottom: 62px;
 }
 
-.m-vendidos {
-    margin-top: 121px;
-    width: 1536px;
-    margin-bottom: 180px;
+#carouselExampleInterval {
+    width: 80%;        /* Ajuste a largura conforme necessário */
+    max-width: 1052px;  /* Largura máxima opcional */
+    height: 215px;     /* Ajuste a altura conforme necessário */
+    margin: 0 auto;    /* Centraliza o carrossel na página */
+    overflow: hidden;
+    object-fit: fill;
 }
 
-.m-vendidos .titulo {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    color: #004AAD;
-    font-weight: bold;
+.carousel-inner img {
+    height: 100%;         /* Ajusta a altura da imagem ao contêiner */
+    object-fit: cover;     /* Cobre o contêiner mantendo a proporção */
+    border-radius: 25px;
 }
 
+
+#main {
+    max-width: 1052px;
+    margin: 0 auto;
+    margin-top: 52px;
+}
+
+/*PRODUTOS*/
 .produtos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 85px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 30px;
+    width: 1052px; /* Ajuste a largura conforme necessário */
 }
 
-.produtos .box-produtos {
-    width: 340px;
+.box-produtos {
     height: 513px;
+    overflow: hidden;
     box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.200);
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
     display: grid;
-    grid-template-rows: subgrid;
-    grid-row: 1 / 4;
+    grid-template-rows: repeat(3, 1fr);
 }
+
 
 .box-produtos img {
     justify-self: center;
+    width: 300px;
+    height: 303px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.imagem {
+    cursor: pointer;
 }
 
 .text-m-vendidos {
@@ -90,9 +108,11 @@
 }
 
 .price-m-vendidos {
+    grid-row: 3 / 4;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    align-self: flex-end;
+    gap: 15px;
 }
 
 .price-h1-m-vendidos {
@@ -101,9 +121,9 @@
     font-family: 'Segoe UI';
     font-weight: 700;
     font-size: 33px;
-    line-height: 44px;
+    line-height: 28px;
     color: #004AAD;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .promo-m-vendidos {
@@ -113,41 +133,3 @@
     color: #838383;
 
 }
-
-.buttom {
-    width: 450px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #004AAD 0%, #5293ED 100%);
-    border-radius: 70px;
-    margin-bottom: 115px;
-}
-
-.buttom a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 27px;
-    color: white;
-    font-weight: bold;
-}
-
-/* Categorias */
-
-.geral {
-    display: flex;
-}
-
-.categorias p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    color: #004AAD;
-    font-weight: bold;
-}
-
