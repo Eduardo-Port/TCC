@@ -47,7 +47,7 @@ class ClienteController {
             numero: req.body.numero,
             rua: req.body.logradouro,
             cep: req.body.cep,
-            nomeComplemento: req.body.compl_nome,
+            nomeComplemento: req.body.complemento,
             role: req.body.role
         }
         //pegando dados do body da url
@@ -98,7 +98,7 @@ class ClienteController {
                 return res.status(400).send({ error: "Endereço já cadastrado" })
             }
 
-            if (!id_complemento == 0)
+            if (id_complemento)
                 await enderecoObj.complementoEndereco.call(enderecoObj, id_complemento)
 
             //sobe todas as ações pro banco de dados
@@ -129,14 +129,16 @@ class ClienteController {
             if (!await clienteOBJ.clienteExiste(cliente.email, cliente.senha)) {
                 return res.status(401).send({ error: "Usuário não encontrado" })
             }
-            enderecoOBJ.obterEnderecoCliente()
             const idCliente = clienteOBJ.idCliente
+            console.log('id: ', idCliente)
+            await enderecoOBJ.obterEnderecoCliente.call(enderecoOBJ, idCliente)
             const nome = clienteOBJ.nome
             const sobrenome = clienteOBJ.sobrenome
             const cpf = clienteOBJ.cpf
             const email = clienteOBJ.email
             const role = clienteOBJ.role
             const senha = clienteOBJ.senha
+            console.log('TA LOGANDO OLHA OS DADOS DE ENDEREÇO', enderecoOBJ.rua)
             //caso o usuário seja encontrado, o programa irá retornar o id e o token gerado para esse id
             return res.status(200).send({
                 clienteOBJ,
@@ -148,11 +150,12 @@ class ClienteController {
                     email: email,
                     role: role,
                     senha: senha,
-                    cepCliente: enderecoOBJ.cep,
-                    cidadeCliente: enderecoOBJ.cidade,
-                    bairroCliente: enderecoOBJ.bairro,
-                    logradouroCliente: enderecoOBJ.rua,
-                    numeroCliente: enderecoOBJ.numero
+                    idEndereco: enderecoOBJ.idEndereco,
+                    cep: enderecoOBJ.cep,
+                    cidade: enderecoOBJ.cidade,
+                    bairro: enderecoOBJ.bairro,
+                    logradouro: enderecoOBJ.rua,
+                    numero: enderecoOBJ.numero
                 })
             })
         } catch (error) {
@@ -286,18 +289,37 @@ class ClienteController {
             const cpf = req.clienteInfo.cpfCliente
             const email = req.clienteInfo.emailCliente
             const enderecoOBJ = new Endereco()
+            const complementoOBJ = new Complemento()
             await enderecoOBJ.obterEnderecoCliente(idCliente)
-            return res.status(200).send({
-                nome: `${nome}`,
-                sobrenome: `${sobrenome}`,
-                email: `${email}`,
-                cpf: `${cpf}`,
-                logradouro: `${enderecoOBJ.rua}`,
-                cep: `${enderecoOBJ.cep}`,
-                numero: `${enderecoOBJ.numero}`,
-                bairro: `${enderecoOBJ.bairro}`,
-                cidade: `${enderecoOBJ.cidade}`
-            })
+            const idComplemento = await complementoOBJ.getComplementoByIdEndereco(enderecoOBJ.idEndereco)
+            let complemento
+            if (idComplemento != 0) {
+                complemento = await complementoOBJ.dataComplemento(idComplemento)
+                return res.status(200).send({
+                    nome: `${nome}`,
+                    sobrenome: `${sobrenome}`,
+                    email: `${email}`,
+                    cpf: `${cpf}`,
+                    logradouro: `${enderecoOBJ.rua}`,
+                    cep: `${enderecoOBJ.cep}`,
+                    numero: `${enderecoOBJ.numero}`,
+                    bairro: `${enderecoOBJ.bairro}`,
+                    cidade: `${enderecoOBJ.cidade}`,
+                    complemento: `${complemento}`
+                })
+            } else {
+                return res.status(200).send({
+                    nome: `${nome}`,
+                    sobrenome: `${sobrenome}`,
+                    email: `${email}`,
+                    cpf: `${cpf}`,
+                    logradouro: `${enderecoOBJ.rua}`,
+                    cep: `${enderecoOBJ.cep}`,
+                    numero: `${enderecoOBJ.numero}`,
+                    bairro: `${enderecoOBJ.bairro}`,
+                    cidade: `${enderecoOBJ.cidade}`
+                })
+            }
         } catch (error) {
             return error
         }
@@ -314,25 +336,47 @@ class ClienteController {
     }
 
     async atualizarCliente(req, res) {
+        let contador = 0
         const idCliente = req.clienteInfo.idCliente
+        const idEndereco = req.clienteInfo.idEndereco
         const nome = req.body.nome
         const sobrenome = req.body.sobrenome
-
+        const cpf = req.body.cpf
+        const cep = req.body.cep
+        const city = req.body.cidade
+        const bairro = req.body.bairro
+        const rua = req.body.logradouro
+        const numero = req.body.numero
+        const newComplemento = req.body.complemento
+        const endereco = new Endereco()
+        const complemento = new Complemento()
+        console.log("complemento: ", newComplemento)
         const cliente = new Cliente()
         try {
-            const sucesso = await cliente.atualizarDadosCliente(nome, sobrenome, idCliente)
+            const sucesso = await cliente.atualizarDadosCliente(nome, sobrenome, cpf, idCliente)
             if (sucesso) {
-                return res.status(200).json({ mensagem: "Cliente atualizado com sucesso." })
+                contador += 1
             } else {
                 return res.status(404).json({ mensagem: "Cliente não encontrado" })
+            }
+            const sucesso1 = await endereco.atualizarEnderecoCliente(cep, city, bairro, rua, numero, idEndereco)
+            if (sucesso1) {
+                contador += 1
+            } else {
+                return res.status(404).json({ mensagem: "Endereço não encontrado" })
+            }
+            const sucesso2 = await complemento.atualizaComplementoCliente(idEndereco, newComplemento)
+            if (sucesso2) {
+                contador += 1
+            } else if (contador == 2) {
+                return res.status(200).json({ mensagem: "Cliente e endereço atualizados, porém não foi encontrado nenhum complemento" })
+            }
+            if (contador == 3) {
+                return res.status(200).json({ mensagem: "Cliente, endereço e complemento atualizados!!" })
             }
         } catch (error) {
             return res.status(500).json({ error: "Erro ao atualizar dados do Cliente" })
         }
-    }
-
-    async atualizarEnderecoCliente(req, res) {
-
     }
 };
 

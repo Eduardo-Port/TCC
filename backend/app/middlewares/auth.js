@@ -35,6 +35,7 @@ class AuthService {
                 cpfCliente: decoded.cpf,
                 roleCliente: decoded.role,
                 senhaCliente: decoded.senha,
+                idEndereco: decoded.idEndereco,
                 cepCliente: decoded.cep,
                 cidadeCliente: decoded.cidade,
                 bairroCliente: decoded.bairro,

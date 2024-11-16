@@ -1,7 +1,6 @@
 const sidebar = document.querySelector('#sidebar')
 const sidebarToggler = document.querySelector('.sidebar_toggler')
 
-
 // Toggling the Sidebar
 sidebarToggler.addEventListener('click', () => {
     sidebar.classList.toggle('show')

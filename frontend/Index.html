@@ -51,8 +51,8 @@
             <div class="sidebar_toggler">
                 <!-- <li style="margin-right: 34px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="31" fill="#004AAD" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
-            </li> -->
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
+                </li> -->
                 <span></span>
                 <span></span>
                 <span></span>
@@ -65,18 +65,19 @@
 
 
         <li style="margin-right: 95px; margin-left: 95px;">
-            <div class="browser-container">
+            <div class="browser-container" id="searchInput">
                 <input type="text" placeholder="Buscar">
                 <div class="lupa"><img src="Imagens/Icon_Lupa.png" width="100%" height="100%"
                         style="border-radius: 11px;"></div>
             </div>
         </li>
-        
+
         <div class="user-carrinho">
             <li class="nav-item-dropdown">
                 <img src="icons/user.svg" alt="Ícone de usuário">
             </li>
-            <li><a href="#"><img src="Imagens/Icon_Carrinho.png" width="50px" height="48px"></a></li>
+            <li><img src="Imagens/Icon_Carrinho.png" width="50px" height="48px" class="carrinho-toggler"></li>
+            <aside id="carrinho-lateral"></aside>
         </div>
 
     </ul>
@@ -176,7 +177,7 @@
                     </div>
                 </div>
 
-
+                <!--
                 <div class="box-produtos">
                     <img src="icons/arvendido.svg" alt="">
                     <div class="text-m-vendidos">
@@ -189,7 +190,7 @@
                         <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
                         <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
         <!-- Produtos mais vendidos -->
@@ -262,7 +263,12 @@
             CEP:08554-080</p>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="JS/Navbar.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/index/index.js"></script>
 </body>
 
 </html>

@@ -44,12 +44,17 @@ function ClienteRoutes(app) {
     (req, res) => adminController.cadastraProduto(req, res)
   )
   
-  app.put('/atualizar',
+  app.put('/inativar_produto',
     (req, res, next) => authService.authenticate(req, res, next),
     (req, res, next) => adminService.adminMiddleware(req, res, next),
     (req, res) => adminController.inativarProduto(req, res)
   )
   
+  app.put('/atualizar_dados', 
+    (req, res, next) => authService.authenticate(req, res, next),
+    (req, res) => clienteController.atualizarCliente(req, res)
+  )
+
   app.post('/cadastra_produto/:id/upload',
     (req, res, next) => authService.authenticate(req, res, next),
     (req, res, next) => adminService.adminMiddleware(req, res, next),
