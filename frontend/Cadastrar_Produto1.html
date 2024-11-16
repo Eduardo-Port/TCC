@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Imagens/Icon_Logo.png">
+    <link rel="stylesheet" href="CSS/Menuzin.css" type="text/css">
+    <link rel="stylesheet" href="CSS/Cadastrar_Produto1.css" type="text/css">
+    <link rel="stylesheet" href="CSS/Rodapézin.css" type="text/css">
+    <title>Cadastro de Produtos</title>
+</head>
+
+<body>
+    <!-- Menu -->
+    <div class="menuzin">
+        <a href="Index.html"><img src="Imagens/Icon_Logo_Menu2.png" width="165px" height="100px"></a>
+    </div>
+
+    <!-- Corpo -->
+    <div class="progressbar">
+        <img src="Imagens/Barra_Progresso1.png" width="250px" height="110px" style="margin-top: 50px;">
+    </div>
+    <div class="titulo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-plus-fill"
+            viewBox="0 0 16 16">
+            <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0" />
+        </svg>
+        <p>&nbsp;&nbsp;Crie um Produto</p>
+    </div>
+
+    <form action="POST" id="formProdutos">
+        <div class="info1">
+            <input type="text" placeholder="Nome do Produto" required class="form-content" name="nome_produto" id="nome_produto">
+            <input type="text" placeholder="Preço" required class="form-content" name="preco_produto" id="preco_produto">
+        </div>
+        <select required name="Categoria">
+            <option value="" disabled selected>Categoria</option>
+            <option value="Ar-Condicionado">Ar-Condicionado</option>
+            <option value="Lavadouras">Lavadouras</option>
+            <option value="Geladeiras">Geladeiras</option>
+            <option value="Peças">Peças</option>
+        </select>
+        <div class="info2">
+            <textarea name="info_produto" id="info_produto" placeholder="Informações Técnicas"></textarea>
+        </div>
+        <div class="botao">
+            <input type="submit" value="Avançar">
+        </div>
+        <div class="botao2">
+            <input type="submit" value="Cancelar">
+        </div>
+    </form>
+
+    <!-- Rodapé -->
+    <div class="rodapezin">
+        <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo -
+            CEP:08554-080</p>
+    </div>
+</body>
+
+</html>
