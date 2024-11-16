@@ -16,43 +16,33 @@
 <body>
 
     <!-- Menu -->
+    <aside id="carrinho-lateral">
+        <h2>Carrinho (0)</h2>
+        <p>Você não possui itens no seu carrinho.</p>
+    </aside>
+
+
     <ul id="menu">
         <aside id="sidebar">
             <div class="sidebar_content sidebar_head">
-                <h1>Sidebar</h1>
+                <h1>Categorias</h1>
             </div>
 
             <div class="sidebar_content sidebar_body">
                 <nav class="side_navlinks">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Ar-Condicionado</a></li>
+                        <li><a href="#">Geladeiras</a></li>
+                        <li><a href="#">Lavadoras</a></li>
+                        <li><a href="#">Peças</a></li>
                     </ul>
                 </nav>
-            </div>
-
-            <div class="sidebar_content sidebar_foot">
-                <p>
-                    &#169;
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                    &#160;JavaScript Sidebar.
-                </p>
             </div>
         </aside>
 
         <!--== Sidebar-Toggler ==-->
-
         <div class="logo-menu">
             <div class="sidebar_toggler">
-                <!-- <li style="margin-right: 34px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="31" fill="#004AAD" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
-                </li> -->
                 <span></span>
                 <span></span>
                 <span></span>
@@ -65,19 +55,63 @@
 
 
         <li style="margin-right: 95px; margin-left: 95px;">
-            <div class="browser-container" id="searchInput">
-                <input type="text" placeholder="Buscar">
-                <div class="lupa"><img src="Imagens/Icon_Lupa.png" width="100%" height="100%"
-                        style="border-radius: 11px;"></div>
-            </div>
+            <li style="margin-right: 95px; margin-left: 95px;">
+                <div class="drop-search">
+                    <div class="browser-container">
+                        <input type="text" placeholder="Buscar">
+                        <div class="lupa"><img src="Imagens/Icon_Lupa.png" width="100%" height="100%"
+                                style="border-radius: 11px;"></div>
+                    </div>
+                    <ul class="buscar-produto">
+                        <li>
+                            <ul>
+                                <li>
+                                    <img src="Imagens/Produto_Geladeira.png" width="65px" height="65px">
+                                </li>
+                                <li>
+                                    <p>Geladeira meuzovo 220V muito monstra</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>
+                                    <img src="Imagens/Produto_Geladeira.png" width="65px" height="65px">
+                                </li>
+                                <li>
+                                    <p>Geladeira meuzovo 220V muito monstra</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </li>
         </li>
 
         <div class="user-carrinho">
             <li class="nav-item-dropdown">
-                <img src="icons/user.svg" alt="Ícone de usuário">
+                <div class="drop-perfil">
+                    <img src="icons/user.svg" alt="Ícone de usuário">
+                    <ul class="user-dropdown">
+                        <li>
+                            <p id="user">Usuário</p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>Minha Conta</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>Meu Carrinho</p>
+                            </a>
+                            <div class="line"></div>
+                        </li>
+                    </ul>
+                </div>
             </li>
-            <li><img src="Imagens/Icon_Carrinho.png" width="50px" height="48px" class="carrinho-toggler"></li>
-            <aside id="carrinho-lateral"></aside>
+            <li style="cursor: pointer;"><img src="Imagens/Icon_Carrinho.png" width="50px" height="48px"
+                    class="carrinho-toggler"></li>
         </div>
 
     </ul>
