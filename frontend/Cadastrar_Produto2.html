@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Imagens/Icon_Logo.png">
+    <link rel="stylesheet" href="CSS/Menuzin.css" type="text/css">
+    <link rel="stylesheet" href="CSS/Cadastrar_Produto2.css" type="text/css">
+    <link rel="stylesheet" href="CSS/ParaIMG.css">
+    <link rel="stylesheet" href="CSS/Rodapézin.css" type="text/css">
+    <title>Cadastro de Produtos</title>
+</head>
+
+<body>
+    <!-- Menu -->
+    <div class="menuzin">
+        <a href="Index.html"><img src="Imagens/Icon_Logo_Menu2.png" width="165px" height="100px"></a>
+    </div>
+
+    <!-- Corpo -->
+    <div class="progressbar">
+        <img src="Imagens/Barra_Progresso2.png" width="250px" height="110px" style="margin-top: 50px;">
+    </div>
+
+    <div class="titulo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-plus-fill"
+            viewBox="0 0 16 16">
+            <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0" />
+        </svg>
+        <p>&nbsp;&nbsp;Crie um Produto</p>
+    </div>
+
+    <div class="align">
+        <p class="title">Imagem Principal do Produto:</p>
+
+        <label class="picture" for="picture__input" tabIndex="0">
+            <span class="picture__image"></span>
+        </label>
+
+        <input type="file" name="picture__input" id="picture__input">
+    </div>
+
+    <div class="align2">
+        <h2>Imagens para Carrossel:</h2>
+
+        <label for="input1">Selecione imagen 1:</label>
+        <input type="file" id="input1" multiple>
+        <div id="preview1" class="previewContainer"></div>
+
+        <label for="input2">Selecione imagen 2:</label>
+        <input type="file" id="input2" multiple>
+        <div id="preview2" class="previewContainer"></div>
+
+        <label for="input3">Selecione imagen 3:</label>
+        <input type="file" id="input3" multiple>
+        <div id="preview3" class="previewContainer"></div>
+
+        <label for="input4">Selecione imagen 4:</label>
+        <input type="file" id="input4" multiple>
+        <div id="preview4" class="previewContainer"></div>
+    </div>
+
+    <script src="JS/SalvarIMG2.js"></script>
+
+    <div class="botao">
+        <input type="submit" value="Enviar">
+    </div>
+    <div class="botao2">
+        <input type="submit" value="Cancelar">
+    </div>
+
+    <!-- Rodapé -->
+    <div class="rodapezin">
+        <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo -
+            CEP:08554-080</p>
+    </div>
+
+    <script src="JS/SalvarIMG.js"></script>
+    <script src="JS/SalvarIMG.js"></script>
+</body>
+
+</html>

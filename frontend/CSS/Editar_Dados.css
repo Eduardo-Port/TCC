@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 130px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+
+    color: #004AAD;
+}
+
+.acesso, .pessoais, .residenciais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acesso p, .pessoais p, .residenciais p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #004AAD;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.acesso input, .acesso input:focus-visible{
+    width: 310px;
+    height: 47px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    color: #004AAD;
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+
+    padding: 18px 22px;
+    gap: 10px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.acesso input::placeholder{
+    color: #004bad70;
+}
+
+.pessoais input, .pessoais input:focus-visible{
+    width: 310px;
+    height: 47px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    color: #004AAD;
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+
+    padding: 18px 22px;
+    gap: 10px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.pessoais .juntos input{
+    width: 152px;
+}
+
+.pessoais input::placeholder{
+    color: #004bad70;
+}
+
+select, select:active{
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+    width: 310px;
+    height: 47px;
+    padding: 0px 22px;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+select:required:invalid {
+    color: #004AAD;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: #004AAD;
+}
+
+.residenciais input,  .residenciais input:focus-visible{
+    width: 310px;
+    height: 47px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    color: #004AAD;
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+
+    padding: 18px 22px;
+    gap: 10px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.residenciais .juntos input{
+    width: 152px;
+}
+
+.residenciais input::placeholder{
+    color: #004bad70;
+}
+
+.line{
+    width: 416px;
+    height: 0px;
+    border: 1px solid #004bad35;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.botao button{
+    width: 310px;
+    height: 47px;
+
+    background-color: #004AAD;
+    border-radius: 39px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+.botao2 button{
+    width: 310px;
+    height: 47px;
+
+    background-color: #8f8f8f;
+    border-radius: 39px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+.botao button:hover, .botao2 button:hover {
+    font-size: 23.5px;
+    width: 313px;
+    height: 49px;
+}
+
+.texto a{
+    margin-bottom: 125px;
+    margin-left: 1vh;
+    text-decoration: none;
+    color: #004AAD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.texto a:hover{
+    text-decoration: underline;
+    font-size: 14.5px;
+}
+
+.fim-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o contêiner de botão e texto */
+    gap: 10px;   
+    margin-bottom: 125px;        /* Ajusta o espaçamento entre o botão e o texto */
+}
+
+.fim-form .botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o botão */
+}
+
+.fim-form .texto {
+    align-self: flex-start; 
+    margin-top: 5px;/* Alinha o texto ao início do botão */
+    margin-left: 12%;        /* Ajuste de margem, se necessário */
+}
+
+#formCadastro .form-content-error {
+    border: 1px solid rgb(223, 11, 11);
+}
+
+.juntos {
+    display: flex;
+    gap: 13px;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 12.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: none; /* Escondido por padrão */
+  }
+
+  .custom-alert p {
+    margin: 0 0 15px;
+    font-size: 16px;
+  }
+
+  .custom-alert button {
+    background-color: #f5c6cb;
+    color: #721c24;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .custom-alert button:hover {
+    background-color: #f1b0b7;
+  }
+
+  .custom-alert.visible {
+    display: block;
+  }

@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+
+    color: #004AAD;
+
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form .info1 input, form select{
+    margin-bottom: 20px;
+}
+
+
+.info1 input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 22px;
+    gap: 10px;
+
+    width: 371px;
+    height: 55px;
+
+    border: 2px solid #004AAD;
+    border-radius: 39px;
+}
+
+.info1 input::placeholder {
+    color: #004bad70;
+}
+
+.info1 input:focus-visible {
+    outline: none;
+    color: #004AAD;
+}
+
+select {
+    color: #004AAD70;
+}
+
+select, select:active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 17px;
+    gap: 10px;
+
+    width: 371px;
+    height: 55px;
+
+    border: 2px solid #004bad;
+    border-radius: 39px;
+}
+
+select:required:invalid {
+    border: 2px solid #004aad;
+    outline: none;
+}
+
+select:required:valid {
+    border: 2px solid #004aad;
+    outline: none;
+    color: #004AAD;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: #004AAD;
+}
+
+.info2 input {
+    display: flex;
+    align-items: flex-start;
+    padding: 18px;
+    gap: 10px;
+
+    height: 358px;
+
+    border: 2px solid #004AAD;
+    border-radius: 15px;
+}
+
+.info2 textarea {
+    resize: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    align-items: flex-start;
+    padding: 18px;
+    gap: 10px;
+
+    height: 358px;
+    width: 600px;
+
+    border: 2px solid #004AAD;
+    border-radius: 20px;
+
+    color: #004AAD;
+}
+
+.info2 textarea:focus-visible {
+    outline: none;
+}
+
+.info2 textarea::placeholder {
+    color: #004bad70;
+}
+
+.botao input {
+    width: 310px;
+    height: 47px;
+
+    background-color: #004AAD;
+    color: white;
+    border: none;
+    border-radius: 50px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: #FFFFFF;
+
+    margin-top: 40px;
+
+    cursor: pointer;
+}
+
+.botao2 input {
+    width: 310px;
+    height: 47px;
+
+    background-color: #8f8f8f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: #FFFFFF;
+
+    margin-top: 10px;
+    margin-bottom: 100px;
+
+    cursor: pointer;
+}

@@ -1,0 +1,135 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial';
+}
+
+#submenu {
+    margin-bottom: 62px;
+}
+
+#carouselExampleInterval {
+    width: 80%;        /* Ajuste a largura conforme necessário */
+    max-width: 1052px;  /* Largura máxima opcional */
+    height: 215px;     /* Ajuste a altura conforme necessário */
+    margin: 0 auto;    /* Centraliza o carrossel na página */
+    overflow: hidden;
+    object-fit: fill;
+}
+
+.carousel-inner img {
+    height: 100%;         /* Ajusta a altura da imagem ao contêiner */
+    object-fit: cover;     /* Cobre o contêiner mantendo a proporção */
+    border-radius: 25px;
+}
+
+
+#main {
+    max-width: 1052px;
+    margin: 0 auto;
+    margin-top: 52px;
+}
+
+/*PRODUTOS*/
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 30px;
+    width: 1052px; /* Ajuste a largura conforme necessário */
+}
+
+.box-produtos {
+    height: 513px;
+    overflow: hidden;
+    box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.200);
+    border-radius: 10px;
+    padding: 10px 10px 0px 10px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+.box-produtos img {
+    justify-self: center;
+    width: 300px;
+    height: 303px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.imagem {
+    cursor: pointer;
+}
+
+.text-m-vendidos {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-m-vendidos p {
+    width: 302px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+}
+
+.span-m-vendido {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 6px;
+    width: 60px;
+    height: 22px;
+    background: #004AAD;
+    border-radius: 7px;
+}
+
+.span-m-vendido .p-m-vendido {
+    line-height: 15px;
+    margin: 0;
+    color: white;
+    width: 48px;
+    height: 18px;
+    font-family: 'Arial';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.text-m-vendidos p {
+    margin: 6px 0px 0px 0px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.price-m-vendidos {
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    gap: 15px;
+}
+
+.price-h1-m-vendidos {
+    width: 302px;
+    height: 33px;
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 28px;
+    color: #004AAD;
+    margin-top: 20px;
+}
+
+.promo-m-vendidos {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #838383;
+
+}
