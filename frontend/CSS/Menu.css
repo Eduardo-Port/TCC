@@ -158,3 +158,13 @@
     display: flex;
     gap: 20px;
 }
+
+.carrinho-legal.show {
+    position: fixed;
+    right: 0;
+    width: 50px;
+    z-index: 999;
+
+    height: 100%;
+    background-color: #a33e3e;
+}

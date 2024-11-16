@@ -227,9 +227,9 @@ class Cliente {
         }
     }
 
-    async atualizarDadosCliente(nome, sobrenome, idCliente) {
-        const sql = `UPDATE Cliente SET cli_nome = ?, cli_sobrenome = ? WHERE id_cliente = ?`;
-        const values = [nome, sobrenome, idCliente];
+    async atualizarDadosCliente(nome, sobrenome, cpf, idCliente) {
+        const sql = `UPDATE Cliente SET cli_nome = ?, cli_sobrenome = ?, cli_cpf = ? WHERE id_cliente = ?`;
+        const values = [nome, sobrenome, cpf, idCliente];
 
         try {
             const [result] = await conn.query(sql, values);
@@ -241,7 +241,6 @@ class Cliente {
             return true;
         } catch (error) {
             console.error("Erro ao atualizar o cliente: ", error);
-            throw error;
         }
     }
 }

@@ -111,12 +111,48 @@ class Produto {
         }
     }
 
+    async productIsUniqueInCategory(idCategoria) {
+        const sql = `SELECT id_produto, prod_status FROM Produto WHERE id_categoria = ?;`
+        const values = [idCategoria]
+
+        try {
+            const [rows] = await conn.query(sql, values)
+            if (rows.length == 0)
+                throw new Error('Produto com essa categoria não foi encontrado')
+            else if(rows.length == 1) {
+                return true
+            } else {
+                return false
+            }
+        } catch (error) {
+            console.error('erro ao verificar se o produto é unico na categoria: ' + error)
+        }
+    }
+
+    async mudarStatusCategoria(status, id) {
+        const sql = `UPDATE Categoria SET categoria_status = ? WHERE id_categoria = ?`
+        console.log(status, id)
+        const values = [status, id]
+        try {
+            const [result] = await conn.query(sql, values)
+            if (result.affectedRows === 0) {
+                throw new Error('Nenhuma alteração feita no bd ao mudar status da Categoria')
+            }
+            console.log('Status da categoria atualizado com sucesso')
+        } catch (error) {
+            console.error("Erro ao mudar status do Produto: " + error.message)
+        }
+    }
+
     async verificaStatusCategoria(categoria) {
-        const sql = `SELECT * FROM Categoria WHERE categoria_prod = ?;`
+        const sql = `SELECT * FROM Categoria WHERE id_categoria = ?;`
         const value = [categoria]
         try {
             const [rows] = await conn.query(sql, value)
-            this.categoria = rows[0].id_categoria
+            this.categoria = categoria
+            if (rows.length == 0) {
+                return true
+            }
             if (rows[0].categoria_status == 1)
                 return 0
             else
@@ -126,14 +162,15 @@ class Produto {
         }
     }
 
-    async verificaStatusProduto(nome) {
-        const sql = `SELECT id_produto, prod_status, id_categoria FROM Produto WHERE id_categoria = ? AND prod_nome = ?;`
-        const value = [this.categoria, nome]
+    async verificaStatusProduto(id) {
+        const sql = `SELECT id_produto, prod_status, id_categoria FROM Produto WHERE id_produto = ?;`
+        const value = [id]
         try {
             const [rows] = await conn.query(sql, value)
             if (rows.length == 0)
                 throw new Error('Produto não encontrado')
-            this.idProduto = rows[0].id_produto
+            this.idProduto = id
+            this.categoria = rows[0].id_categoria
 
             if (rows[0].prod_status == 1)
                 return 0
@@ -199,26 +236,26 @@ class Produto {
                      FROM Produto 
                      WHERE prod_status = 1 AND id_produto = ?`;
         const values = [id];
-       try {
-        const [result] = await conn.query(sql, values)
-        this.categoria = result[0].categoria
-        this.fichaTecnica = result[0].ficha
-        this.frete = 35
-        this.idProduto =result[0].id
-        this.nome = result[0].nome
-        this.preco = result[0].preco
-        const produtin = {
-            categoria: this.categoria,
-            ficha: this.fichaTecnica,
-            frete: this.frete,
-            nome: this.nome,
-            preco: this.preco
-        }
-        return produtin
-       } catch (error) {
+        try {
+            const [result] = await conn.query(sql, values)
+            this.categoria = result[0].categoria
+            this.fichaTecnica = result[0].ficha
+            this.frete = 35
+            this.idProduto = result[0].id
+            this.nome = result[0].nome
+            this.preco = result[0].preco
+            const produtin = {
+                categoria: this.categoria,
+                ficha: this.fichaTecnica,
+                frete: this.frete,
+                nome: this.nome,
+                preco: this.preco
+            }
+            return produtin
+        } catch (error) {
             console.error(error.message)
 
-       }
+        }
     }
 
 

@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.voltar a {
+    width: 132px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    color: #004AAD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+
+    color: #004AAD;
+
+    margin-top: 5rem;
+}
+
+.categoria select {
+    outline: none;
+
+    color: #004AAD70;
+}
+
+.categoria select, .categoria select:active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 17px;
+    gap: 10px;
+
+    width: 200px;
+    height: 55px;
+
+    border: 2px solid #004bad;
+    border-radius: 39px;
+}
+
+.categoria select:required:invalid {
+    border: 2px solid #004aad;
+}
+
+.categoria select:required:valid {
+    border: 2px solid #004aad;
+    
+    color: #004AAD;
+}
+
+.categoria option[value=""][disabled] {
+    display: none;
+}
+
+.categoria option {
+    color: #004AAD;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex{
+    display: flex;
+
+    width: 800px;
+
+    border-bottom: 2px solid #004AAD;
+
+    gap: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome p {
+    width: 600px;
+    height: 68px;
+
+    padding-top: 8px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 34px;
+
+    word-wrap: break-word;
+}
+
+.preco p {
+    width: 410px;
+    height: 68px;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding-bottom: 8px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 34px;
+
+    color: #004AAD;
+}
+
+.lixeira-icon button {
+    background: none;
+    border: none;
+
+    margin-top: 14px;
+    margin-left: 10px;
+
+    cursor: pointer;
+}
+
+.line {
+    height: 1px;
+    width: 410px;
+
+    border: 1px solid #004AAD;
+}
+
+.box-add {
+    margin-top: 13rem;
+}
+
+.box-add .box a {
+    text-decoration: none;
+
+    color: white;
+}
+
+.box-add .box {
+    width: 170px;
+    height: 170px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #004AAD;
+
+    padding: 10px;
+}
+
+.box-add .box p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+
+    color: white;
+}
+
+#plus{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    font-weight: 500;
+
+    color: white;
+}
+
+.image-manage-product {
+    width: 150px;
+    height: 130px;
+}

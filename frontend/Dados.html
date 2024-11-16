@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="CSS/Rodapé.css" type="text/css">
     <title>Dados do Usuário</title>
 </head>
+
 <body>
     <!-- Menu -->
     <div class="menuzin">
@@ -32,23 +34,49 @@
             <div class="box-resi">
                 <h2>Dados Residenciais</h2>
                 <div class="line"></div>
-                <p>Logradouro:</p>
-                <div class="numcom">
-                    <p>Nº:</p>
-                    <p>Complemento:</p>
+                <div class="wrap-data">
+                    <p >Logradouro:</p>
+                    <span id="log"></span>
                 </div>
-                <p>Bairro:</p>
-                <p>CEP:</p>
+
+                <div class="wrap-data">
+                    <p >Nº:</p>
+                    <span id="num"></span>
+                </div>
+                <div class="wrap-data">
+                    <p >Complemento:</p>
+                    <span id="compl"></span>
+                </div>
+                <div class="wrap-data">
+                    <p >Bairro:</p>
+                    <span id="bairro"></span>
+                </div>
+                <div class="wrap-data">
+                    <p >CEP:</p>
+                    <span id="cep"></span>
+                </div>
+
             </div>
         </div>
         <div class="box-pes">
             <h2>Dados Pessoais</h2>
-                <div class="line"></div>
-                <p>Nome Completo:</p>
-                <p>CPF:</p>
-                <div class="line"></div>
-                <p>E-mail:</p>
+            <div class="line"></div>
+            <div class="wrap-data">
+                <p >Nome Completo:</p>
+                <span id="name"></span>
+            </div>
+            <div class="wrap-data">
+                <p >CPF:</p>
+                <span id="cpf"></span>
+            </div>
+            <div class="line"></div>
+            <div class="wrap-data">
+                <p >E-mail:</p>
+                <span id="email"></span>
+            </div>
         </div>
+
+    </div>
     </div>
     <div class="botao">
         <button>Editar</button>
@@ -90,9 +118,11 @@
     </div>
 
     <div class="s-rodape">
-        <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo - CEP:08554-080</p>
+        <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo -
+            CEP:08554-080</p>
     </div>
 
     <script src="./JS/dados/dados.js"></script>
 </body>
+
 </html>
