@@ -189,43 +189,54 @@ class Cliente {
     }
 
     async deletarCliente(id) {   
-        const sql3 = `SELECT id_endereco AS endereco FROM endereco WHERE id_cliente = ?`
-        const sql1 = `SELECT id_complemento AS complemento FROM EnderecoComplemento WHERE id_endereco = ?`
-        const sql = `DELETE FROM Cliente WHERE id_cliente = ?` 
-        const values = [id]
-        const sql2 = `DELETE FROM Complemento WHERE id_complemento = ?`
-        const endereco = []
-        const idComplemento = []
+        const sql3 = `SELECT id_endereco AS endereco FROM endereco WHERE id_cliente = ?`;
+        const sql1 = `SELECT id_complemento AS complemento FROM EnderecoComplemento WHERE id_endereco = ?`;
+        const sql = `DELETE FROM Cliente WHERE id_cliente = ?`;
+        const sql2 = `DELETE FROM Complemento WHERE id_complemento = ?`;
+        
+        const values = [id];
+        const endereco = [];
+        const idComplemento = [];
+        
         try {
-            const [rows1] = await conn.query(sql3, values)
-            if(rows1.length == 0) {
-                throw new Error('Cliente não foi encontrado')
+            // Busca o endereço do cliente
+            const [rows1] = await conn.query(sql3, values);
+            if (rows1.length === 0) {
+                throw new Error('Cliente não foi encontrado');
             } else {
-                console.log(rows1[0].endereco)
-                endereco.push(rows1[0].endereco)
+                endereco.push(rows1[0].endereco);
             }
-            const [rows2] = await conn.query(sql1, endereco[0])
-            if(rows2.length == 0) {
-                throw new Error('Complemento não encontrado')
+            
+            console.log('Endereço iD: ', endereco[0]);
+    
+            // Busca o complemento do endereço
+            const [rows2] = await conn.query(sql1, [endereco[0]]);
+            if (rows2.length === 0) {
+                console.log('Nenhum complemento encontrado para este endereço. Prosseguindo...');
             } else {
-                idComplemento.push(rows2[0].complemento)
+                idComplemento.push(rows2[0].complemento);
+                // Deleta o complemento, se existir
+                const [rows3] = await conn.query(sql2, [idComplemento[0]]);
+                if (rows3.affectedRows === 0) {
+                    throw new Error('Erro ao deletar complemento');
+                } else {
+                    console.log('Complemento deletado com sucesso');
+                }
             }
-            const [rows] = await conn.query(sql, values)
-            if(rows.length == 0) {
-                throw new Error('Erro ao deletar Cliente')
+    
+            // Deleta o cliente
+            const [rows] = await conn.query(sql, values);
+            if (rows.affectedRows === 0) {
+                throw new Error('Erro ao deletar Cliente');
             } else {
-                console.log('Cliente deletado com Sucesso')
-            }
-            const [rows3] = await conn.query(sql2, idComplemento)
-            if(rows3.length == 0) {
-                throw new Error('Erro ao deletar complemento')
-            } else {
-                console.log('Complemento deletado com sucesso')
+                console.log('Cliente deletado com sucesso');
             }
         } catch (error) {
-            console.log('Erro ao deletar informações do cliente: ', error.message)
+            console.log('Erro ao deletar informações do cliente: ', error.message);
         }
     }
+    
+    
 
     async atualizarDadosCliente(nome, sobrenome, cpf, idCliente) {
         const sql = `UPDATE Cliente SET cli_nome = ?, cli_sobrenome = ?, cli_cpf = ? WHERE id_cliente = ?`;
