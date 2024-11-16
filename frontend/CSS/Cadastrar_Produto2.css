@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progressbar {
+    margin-bottom: 20px;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+
+    color: #004AAD;
+
+    margin-bottom: 70px;
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+
+    color: #004AAD;
+}
+
+
+
+#picture__input {
+    display: none;
+}
+  
+.picture {
+    width: 400px;
+    aspect-ratio: 16/9;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #004AAD;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px dashed currentcolor;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    outline: none;
+    overflow: hidden;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+  
+.picture:hover {
+    color: #777;
+    background: #ccc;
+}
+  
+.picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+  
+.picture__img {
+    max-width: 100%;
+}
+
+.img {
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.img input {
+    margin-bottom: 10px;
+
+    cursor: pointer;
+}
+
+.botao input {
+    width: 310px;
+    height: 47px;
+
+    background-color: #004AAD;
+    color: white;
+    border: none;
+    border-radius: 50px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: #FFFFFF;
+
+    margin-top: 40px;
+
+    cursor: pointer;
+}
+
+.botao2 input {
+    width: 310px;
+    height: 47px;
+
+    background-color: #8f8f8f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: #FFFFFF;
+
+    margin-top: 10px;
+    margin-bottom: 100px;
+
+    cursor: pointer;
+}

@@ -48,6 +48,7 @@ async function getDadosCliente() {
 }
 
 console.log(localStorage.getItem('token'))
+
 getDadosCliente();
 
 function customConfirm(message) {
@@ -107,3 +108,4 @@ excluirButton.addEventListener('click', async (e) => {
         console.error('Erro ao excluir conta:', error.message);
     }
 });
+
