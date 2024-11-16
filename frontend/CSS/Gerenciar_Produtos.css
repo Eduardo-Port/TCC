@@ -68,7 +68,6 @@
     display: flex;
     justify-content: space-around;
 }
-
 .flex {
     display: flex;
 
@@ -174,4 +173,9 @@
     font-weight: 500;
 
     color: white;
+}
+
+.image-manage-product {
+    width: 150px;
+    height: 130px;
 }

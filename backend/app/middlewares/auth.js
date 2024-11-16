@@ -34,7 +34,13 @@ class AuthService {
                 emailCliente: decoded.email,
                 cpfCliente: decoded.cpf,
                 roleCliente: decoded.role,
-                senhaCliente: decoded.senha
+                senhaCliente: decoded.senha,
+                idEndereco: decoded.idEndereco,
+                cepCliente: decoded.cep,
+                cidadeCliente: decoded.cidade,
+                bairroCliente: decoded.bairro,
+                logradouroCliente: decoded.logradouro,
+                numeroCliente: decoded.numero                
             }
             console.log(req.clienteInfo)
             

@@ -9,7 +9,9 @@ class AdminController {
         try {
             //instancia feita apenas para descobrir o id da categoria enviada
             const achadorDeCategoria = new Produto()
+            console.log("A CATEGORIA DO PRODUTO É: ", categoria)
             const idCategoria = await achadorDeCategoria.descobreIdCategoria(categoria)
+            console.log("A CATEGORIA DO PRODUTO É: ", idCategoria)
             const produto = new Produto(idCategoria, nome, preco, ficha)
             //verificação da categoria
             if (await produto.categoriaExiste(categoria)) {
@@ -30,24 +32,28 @@ class AdminController {
 
     async inativarProduto(req, res) {
         const data = {
-            categoria: req.body.categoria,
-            nome: req.body.nome
+            idCategoria: req.body.categoria,
+            idNome: req.body.id
         }
 
         try {
             //instancia do produto que vai verificar o status da categoria e do produto
             const produto = new Produto()
             //variavel q vai armazenar o contrário do status de categoria q foi armazenado no banco de dados
-            const categoriaExiste = await produto.verificaStatusCategoria(data.categoria)
-            if (!categoriaExiste) {
+            const categoriaAtual = await produto.verificaStatusCategoria(data.idCategoria)
+            /*if (!categoriaAtual) {
                 return res.status(404).json({ message: "Categoria não encontrada" })
+            }*/
+
+            if(await produto.productIsUniqueInCategory(data.idCategoria)) {
+                await produto.mudarStatusCategoria(categoriaAtual, data.idCategoria)
             }
             //variavel q armazena o contrario do armazenado no status do produto no banco de dados
-            const statusAtual = await produto.verificaStatusProduto(data.nome)
+            const statusAtual = await produto.verificaStatusProduto(data.idNome)
             if (statusAtual === undefined) {
                 return res.status(404).json({ message: "Produto não encontrado" })
             }
-            const novoStatus = await produto.mudarStatusProduto(statusAtual)
+            const novoStatus = await produto.mudarStatusProduto(statusAtual, data.idNome)
             return res.status(201).json({ message: "Status do produto atualizado", novoStatus })
         } catch (error) {
             return res.status(500).json({ message: "Erro ao atualizar status do produto: ", error: error.message })

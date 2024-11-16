@@ -89,6 +89,23 @@ class Endereco {
             console.log('Erro ao obter o endereço do cliente', error)
         }
     }
+
+    async atualizarEnderecoCliente(cep, cidade, bairro, rua, numero, idEndereco) {
+        const sql = `UPDATE Endereco SET end_cep = ?, end_cidade = ?, end_bairro = ?, end_rua = ?, end_numero = ? WHERE id_endereco = ?`;
+        const values = [cep, cidade, bairro, rua, numero, parseInt(idEndereco)];
+
+        try {
+            const [result] = await conn.query(sql, values);
+            if (result.affectedRows === 0) {
+                console.log("Nenhum cliente encontrado com esse ID.");
+                return false;
+            }
+            console.log("Dados do cliente atualizados com sucesso.");
+            return true;
+        } catch (error) {
+            console.error("Erro ao atualizar o cliente: ", error);
+        }
+    }
 }
 
 module.exports = Endereco

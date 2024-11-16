@@ -14,33 +14,60 @@ const storage = multer.diskStorage({
         }
         callback(null, productFolderPath)
     },*/
-
-    destination: (req, file, cb) => {
-        const productId = req.params.id; // Supondo que o ID do produto venha na URL
-        const uploadDir = path.join(__dirname, '../../upload', `produto_${productId}`);
     
-        // Verificar se a pasta já existe, se não, criá-la
-        fs.access(uploadDir, fs.constants.F_OK, (err) => {
-          if (err) {
-            // A pasta não existe, então criaremos ela
-            fs.mkdir(uploadDir, { recursive: true }, (err) => {
-              if (err) {
-                return cb(new Error('Erro ao criar o diretório de upload'));
-              }
-              cb(null, uploadDir); // Definir a pasta como destino dos uploads
-            });
-          } else {
-            // A pasta já existe
-            cb(null, uploadDir);
+    destination: async (req, file, cb) => {
+      const productId = req.params.id; // ID do produto na URL
+      const uploadDir = path.join(__dirname, '../../upload', `produto_${productId}`);
+    
+      try {
+        // Log para verificar o caminho completo do diretório
+        console.log('Tentando acessar o diretório:', uploadDir);
+    
+        // Verificar se o diretório existe
+        await fs.promises.access(uploadDir, fs.constants.F_OK);
+        console.log('Diretório já existe:', uploadDir);
+    
+        // Se o diretório existe, passar o caminho para o callback
+        cb(null, uploadDir);
+      } catch (err) {
+        // Caso o diretório não exista, tentamos criar
+        if (err.code === 'ENOENT') {
+          try {
+            console.log('Diretório não existe. Tentando criar:', uploadDir);
+            await fs.promises.mkdir(uploadDir, { recursive: true });
+            console.log('Diretório criado com sucesso:', uploadDir);
+            cb(null, uploadDir); // Diretório criado com sucesso
+          } catch (mkdirErr) {
+            // Log para erro ao criar diretório
+            console.error('Erro ao criar diretório:', mkdirErr);
+            cb(new Error('Erro ao criar o diretório de upload')); // Passando o erro para o callback
           }
-        });
-      },
+        } else {
+          // Log para erro ao verificar a existência do diretório
+          console.error('Erro ao verificar o diretório:', err);
+          cb(err); // Passa o erro para o callback
+        }
+      }
+    },
+    
 
-    filename: function (req, file, callback) {
-        const productId = req.params.id
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 189)
-        callback(null, productId + '-' + uniqueSuffix + path.extname(file.originalname))
-    }
+    filename: async function (req, file, callback) {
+      try {
+          const productId = req.params.id;
+          const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 189);
+          // Se fosse necessário realizar alguma operação assíncrona, aqui seria o lugar.
+          
+          // Gerar o nome do arquivo
+          const fileName = productId + '-' + uniqueSuffix + path.extname(file.originalname);
+          
+          // Chamar o callback com o nome do arquivo
+          callback(null, fileName);
+      } catch (error) {
+          // Em caso de erro, passamos o erro para o callback
+          callback(error);
+      }
+  }
+  
 })
 
 module.exports = storage

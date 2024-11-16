@@ -191,7 +191,7 @@ class Cliente {
     async deletarCliente(id) {   
         const sql3 = `SELECT id_endereco AS endereco FROM endereco WHERE id_cliente = ?`
         const sql1 = `SELECT id_complemento AS complemento FROM EnderecoComplemento WHERE id_endereco = ?`
-        const sql = `DELETE FROM Cliente WHERE cliente_id = ?` 
+        const sql = `DELETE FROM Cliente WHERE id_cliente = ?` 
         const values = [id]
         const sql2 = `DELETE FROM Complemento WHERE id_complemento = ?`
         const endereco = []
@@ -224,6 +224,23 @@ class Cliente {
             }
         } catch (error) {
             console.log('Erro ao deletar informações do cliente: ', error.message)
+        }
+    }
+
+    async atualizarDadosCliente(nome, sobrenome, cpf, idCliente) {
+        const sql = `UPDATE Cliente SET cli_nome = ?, cli_sobrenome = ?, cli_cpf = ? WHERE id_cliente = ?`;
+        const values = [nome, sobrenome, cpf, idCliente];
+
+        try {
+            const [result] = await conn.query(sql, values);
+            if (result.affectedRows === 0) {
+                console.log("Nenhum cliente encontrado com esse ID.");
+                return false;
+            }
+            console.log("Dados do cliente atualizados com sucesso.");
+            return true;
+        } catch (error) {
+            console.error("Erro ao atualizar o cliente: ", error);
         }
     }
 }

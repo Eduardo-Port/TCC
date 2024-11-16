@@ -1,11 +1,11 @@
 const form = document.getElementById('formLogin')
 
-form.addEventListener('submit', function(event) {
+//autentica usuario 
+form.addEventListener('submit', function (event) {
   event.preventDefault()
 
   const formdata = new FormData(form)
   const data = {}
-
   formdata.forEach((value, key) => {
     data[key] = value
   })
@@ -17,13 +17,20 @@ form.addEventListener('submit', function(event) {
     },
     body: JSON.stringify(data)
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('RESPOSTA')
-    window.location.href = '../Index.html'
-  })
-  .catch(error => {
-    console.error('erro: ', error)
-    alert('Ocorreu um erro ao enviar os dados')
-  })
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('Falha no login')
+      }
+    })
+    .then(data => {
+      localStorage.setItem('token', `${data.token}`);
+      location.href = './Index.html'
+    })
+    .catch(error => {
+      console.error('erro: ', error)
+      alert('Ocorreu um erro ao enviar os dados')
+    })
 })
+
