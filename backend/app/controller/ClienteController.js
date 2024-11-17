@@ -240,6 +240,7 @@ class ClienteController {
 
     async listaTodosProdutos(req, res) {
         const cat = req.query.categoria
+        console.log(cat)
         const produto = new Produto();
         console.log(`categoria: ${cat}`)
         try {
