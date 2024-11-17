@@ -6,7 +6,7 @@ const clienteRouter = require('./app/routes/cliente_route')
 const path = require("path")
 
 app.use(cors({
-  origin: 'http://127.0.0.1:5500',
+  origin: 'http://127.0.0.1:5501',
   method: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }))

@@ -23,7 +23,7 @@ class AdminController {
             } else {
                 await produto.criaNovoProdutoComNovaCategoria(categoria)
             }
-            return res.status(201).json({ message: "Produto cadastrado com sucesso: ", produto })
+            return res.status(201).json({ produto: produto, message: "Produto cadastrado com sucesso: "  })
         } catch (error) {
             console.error(error);
             return res.status(500).json({ message: "Erro ao cadastrar produto", error: error.message });

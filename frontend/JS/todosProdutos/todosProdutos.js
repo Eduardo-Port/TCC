@@ -1,11 +1,34 @@
-const url = "http://localhost:3000/listar_produtos"
 let section = document.querySelector(".produtos")
+const categoria = document.getElementsByClassName('selected')[0]
+const url = `http://localhost:3000/listar_produtos?categoria=${categoria}`
+const dataS = {
+    categoria
+}
+
+document.getElementById('categoria-selected').addEventListener('change', function (e) {
+    const categoria = e.target.value; // Obtém o valor da opção selecionada
+    if (categoria) {
+        window.location.href = `http://localhost:3000/listar_produtos?categoria=${categoria}`;
+    }
+});
+
 async function getAllProducts() {
-    const response = await fetch(url)
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+    })
     console.log("response: ", response)
     const data = await response.json()      
     console.log('data: ', data)
-
+    if(!Array.isArray(data.isArray)) {
+        const p = document.createElement("p")
+        p.innerText = "Nenhum produto encontrado"     
+        console.log('Nenhum produto encontrado') 
+        throw new Error("Nenhum produtos encontrado")
+    }
     data.map((produto) => {
         const boxProdutos = document.createElement("div")
         const linkImg = document.createElement("a")

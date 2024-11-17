@@ -1,6 +1,5 @@
 // Função para criar os previews para os arquivos selecionados em qualquer input
 function handleImagePreview(inputElement, previewContainer) {
-    // Ouve o evento de mudança no input de arquivos
     inputElement.addEventListener('change', function(event) {
         const files = event.target.files;  // Obtém os arquivos selecionados
         previewContainer.innerHTML = '';   // Limpa os previews anteriores
@@ -10,19 +9,31 @@ function handleImagePreview(inputElement, previewContainer) {
             const file = files[i];
             const reader = new FileReader();
 
-            // Quando a imagem for carregada, cria o preview
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
                 img.classList.add('preview');
-                previewContainer.appendChild(img);
+
+                // Verifica se já existe a imagem, se não, adiciona
+                const existingImages = previewContainer.getElementsByTagName('img');
+                let imageExists = false;
+                for (let j = 0; j < existingImages.length; j++) {
+                    if (existingImages[j].src === e.target.result) {
+                        imageExists = true;
+                        break;
+                    }
+                }
+
+                if (!imageExists) {
+                    previewContainer.appendChild(img);
+                }
             };
 
-            // Lê o arquivo como uma URL de dados (data URL)
             reader.readAsDataURL(file);
         }
     });
 }
+
 
 // Inicializa o preview para os diferentes inputs
 document.addEventListener('DOMContentLoaded', function() {
@@ -41,8 +52,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const preview3 = document.getElementById('preview3');
     handleImagePreview(input3, preview3);
     
-    // Para o input3
-    const input4 = document.getElementById('input4');
-    const preview4 = document.getElementById('preview4');
-    handleImagePreview(input4, preview4);
 });

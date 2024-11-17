@@ -239,14 +239,19 @@ class ClienteController {
     }
 
     async listaTodosProdutos(req, res) {
+        const cat = req.query.categoria
         const produto = new Produto();
+        console.log(`categoria: ${cat}`)
         try {
-            const produtos = await produto.listaTodosProdutos();
+            const produtos = await produto.listaTodosProdutos(cat);
+            console.log(`produtos: ${produtos}`)
             return res.status(200).json(produtos);
         } catch (error) {
+            console.log(`Erro ao listar produtos com imagem: ${error}`)
             return res.status(500).json({ message: "Erro ao listar produtos com imagem", error });
         }
     }
+
 
     async exibeUmProduto(req, res) {
         const productId = req.params.id;

@@ -30,12 +30,12 @@
         <p>&nbsp;&nbsp;Crie um Produto</p>
     </div>
 
-    <form action="POST" id="formProdutos">
+    <form method="POST" id="formProdutos">
         <div class="info1">
-            <input type="text" placeholder="Nome do Produto" required class="form-content" name="nome_produto" id="nome_produto">
-            <input type="text" placeholder="Preço" required class="form-content" name="preco_produto" id="preco_produto">
+            <input type="text" placeholder="Nome do Produto" required class="form-content" name="nome" id="nome_produto">
+            <input type="text" placeholder="Preço" required class="form-content" name="preco" id="preco_produto">
         </div>
-        <select required name="Categoria">
+        <select required name="categoria" id="Categoria">
             <option value="" disabled selected>Categoria</option>
             <option value="Ar-Condicionado">Ar-Condicionado</option>
             <option value="Lavadouras">Lavadouras</option>
@@ -43,7 +43,7 @@
             <option value="Peças">Peças</option>
         </select>
         <div class="info2">
-            <textarea name="info_produto" id="info_produto" placeholder="Informações Técnicas"></textarea>
+            <textarea name="ficha" id="info_produto" placeholder="Informações Técnicas"></textarea>
         </div>
         <div class="botao">
             <input type="submit" value="Avançar">
@@ -58,6 +58,8 @@
         <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo -
             CEP:08554-080</p>
     </div>
+
+    <script src="JS/cadastrarProduto/cadastroProduto1.js"></script>
 </body>
 
 </html>
