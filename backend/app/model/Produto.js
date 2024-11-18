@@ -207,7 +207,7 @@ class Produto {
         let sql = `SELECT id_produto AS id, prod_nome AS nome, prod_preco_unit AS preco, id_categoria AS categoria FROM Produto WHERE prod_status = 1`;
         const params = [];
 
-        if (categoria !== null && categoria !== undefined && categoria !== 'Categorias') { 
+        if (categoria !== null && categoria !== undefined && categoria !== 'Todos') { 
             console.log('Categoria fornecida, descobrindo ID da categoria...');
             const idCategoria = await this.descobreIdCategoria(categoria);
             sql += ' AND id_categoria = ?';

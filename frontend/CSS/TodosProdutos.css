@@ -9,6 +9,10 @@ html, body {
     margin-bottom: 62px;
 }
 
+#container {
+    height: 100vh;
+}
+
 #carouselExampleInterval {
     width: 80%;        /* Ajuste a largura conforme necessário */
     max-width: 1052px;  /* Largura máxima opcional */
@@ -27,7 +31,9 @@ html, body {
 
 #main {
     max-width: 1052px;
-    margin: 0 auto;
+    height: 100vh;
+    margin: 0 auto; 
+    margin-bottom: 300px;
     margin-top: 52px;
 }
 
