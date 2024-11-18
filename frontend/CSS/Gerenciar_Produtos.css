@@ -8,6 +8,17 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#tudo {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    border: 1px solid red;
+}
+
+.content {
+    height: 92vh;
+}
+
 .voltar a {
     width: 132px;
     display: flex;
@@ -258,3 +269,9 @@ body {
     color: white
   }
   
+.sem-produto {
+    color: #004AAD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+}

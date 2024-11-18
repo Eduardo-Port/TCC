@@ -14,135 +14,135 @@
 </head>
 
 <body>
-    <!-- Menu -->
-    <ul id="menu">
-        <aside id="sidebar">
-            <div class="sidebar_content sidebar_head">
-                <h1>Sidebar</h1>
-            </div>
+    <div id="container">
+        <!-- Menu -->
+        <ul id="menu">
+            <aside id="sidebar">
+                <div class="sidebar_content sidebar_head">
+                    <h1>Sidebar</h1>
+                </div>
 
-            <div class="sidebar_content sidebar_body">
-                <nav class="side_navlinks">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+                <div class="sidebar_content sidebar_body">
+                    <nav class="side_navlinks">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
-            <div class="sidebar_content sidebar_foot">
-                <p>
-                    &#169;
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                    &#160;JavaScript Sidebar.
-                </p>
-            </div>
-        </aside>
+                <div class="sidebar_content sidebar_foot">
+                    <p>
+                        &#169;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        &#160;JavaScript Sidebar.
+                    </p>
+                </div>
+            </aside>
 
-        <!--== Sidebar-Toggler ==-->
+            <!--== Sidebar-Toggler ==-->
 
-        <div class="logo-menu">
-            <div class="sidebar_toggler">
-                <!-- <li style="margin-right: 34px;">
+            <div class="logo-menu">
+                <div class="sidebar_toggler">
+                    <!-- <li style="margin-right: 34px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="31" fill="#004AAD" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
                 </li> -->
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <li><a href="Index.html"><img src="Imagens/Icon_Logo_Menu.png" width="148px" height="100px"></a></li>
-        </div>
-
-
-
-
-        <li style="margin-right: 95px; margin-left: 95px;">
-            <div class="browser-container">
-                <input type="text" placeholder="Buscar">
-                <div class="lupa"><img src="Imagens/Icon_Lupa.png" width="100%" height="100%"
-                        style="border-radius: 11px;"></div>
-            </div>
-        </li>
-
-        <div class="user-carrinho">
-            <li class="nav-item-dropdown">
-                <img src="icons/user.svg" alt="Ícone de usuário">
-            </li>
-            <li><a href="#"><img src="Imagens/Icon_Carrinho.png" width="50px" height="48px"></a></li>
-        </div>
-
-    </ul>
-
-    <ul id="submenu">
-        <li><a href="#">Ar-Condicionado</a></li>
-        <li><a href="#">Geladeiras</a></li>
-        <li><a href="#">Lavadoras</a></li>
-        <li><a href="#">Peças</a></li>
-    </ul>
-    <!-- Menu -->
-
-    <!-- Carrossel -->
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="5000">
-                <img src="Imagens/Banner1.png" class="d-block w-100">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src="Imagens/Banner2.png" class="d-block w-100">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src="Imagens/Banner3.png" class="d-block w-100">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src="Imagens/Banner4.png" class="d-block w-100">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src="Imagens/Banner5.png" class="d-block w-100">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <!-- Carrossel -->
-
-    <!-- MAIN -->
-    <main id="main">
-
-        <div class="dropdowns">
-            <div class="dropdown">
-                <div class="select">
-                    <span class="selected" id="categoria-selected">Categorias</span>
-                    <div class="caret"></div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <ul class="menu">
-                    <li>Geladeiras</li>
-                    <li>Ar-condicionado</li>
-                    <li>Lavadoras</li>
-                    <li>Peças</li>
-                    <li>Categorias</li>
-                </ul>
+
+                <li><a href="Index.html"><img src="Imagens/Icon_Logo_Menu.png" width="148px" height="100px"></a></li>
             </div>
 
-<!--
+
+
+
+            <li style="margin-right: 95px; margin-left: 95px;">
+                <div class="browser-container">
+                    <input type="text" placeholder="Buscar">
+                    <div class="lupa"><img src="Imagens/Icon_Lupa.png" width="100%" height="100%"
+                            style="border-radius: 11px;"></div>
+                </div>
+            </li>
+
+            <div class="user-carrinho">
+                <li class="nav-item-dropdown">
+                    <img src="icons/user.svg" alt="Ícone de usuário">
+                </li>
+                <li><a href="#"><img src="Imagens/Icon_Carrinho.png" width="50px" height="48px"></a></li>
+            </div>
+
+        </ul>
+
+        <ul id="submenu">
+            <li><a href="#">Ar-Condicionado</a></li>
+            <li><a href="#">Geladeiras</a></li>
+            <li><a href="#">Lavadoras</a></li>
+            <li><a href="#">Peças</a></li>
+        </ul>
+        <!-- Menu -->
+        <!-- Carrossel -->
+        <main id="main">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="Imagens/Banner1.png" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="Imagens/Banner2.png" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="Imagens/Banner3.png" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="Imagens/Banner4.png" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="Imagens/Banner5.png" class="d-block w-100">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+            <!-- Carrossel -->
+
+            <!-- MAIN -->
+
+            <div class="dropdowns">
+                <div class="dropdown">
+                    <div class="select">
+                        <span class="selected" id="categoria-selected">Categorias</span>
+                        <div class="caret"></div>
+                    </div>
+                    <ul class="menu">
+                        <li>Geladeiras</li>
+                        <li>Ar-condicionado</li>
+                        <li>Lavadoras</li>
+                        <li>Peças</li>
+                        <li>Todos</li>
+                    </ul>
+                </div>
+
+                <!--
             <div class="dropdown">
                 <div class="select">
                     <span class="selected">Categorias</span>
@@ -157,145 +157,145 @@
                 </ul>
             </div>
 -->
+            </div>
+
+            <section class="produtos">
+                <div class="box-produtos">
+                    <img src="icons/geladeiravendida.svg" alt="" class="imagem">
+                    <div class="text-m-vendidos">
+                        <span class="span-m-vendido">
+                            <p class="p-m-vendido">Oferta</p>
+                        </span>
+                        <p class="nome-vendido">Geladeira Brastemp 554 Litros - 220V</p>
+                    </div>
+                    <div class="price-m-vendidos">
+                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                    </div>
+                </div>
+
+
+                <div class="box-produtos">
+
+                    <img src="icons/maquinavendida.svg" alt="" class="imagem">
+
+                    <div class="text-m-vendidos">
+                        <span class="span-m-vendido">
+                            <p class="p-m-vendido">Oferta</p>
+                        </span>
+                        <p>Máquina de Lavar Samsung 11kg</p>
+                    </div>
+                    <div class="price-m-vendidos">
+                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                    </div>
+                </div>
+
+
+
+                <div class="box-produtos">
+
+                    <img src="icons/pecavendida.svg" alt="" class="imagem">
+                    <div class="text-m-vendidos">
+                        <span class="span-m-vendido">
+                            <p class="p-m-vendido">Oferta</p>
+                        </span>
+                        <p>Peça para Lavadora Agitador 10kg</p>
+                    </div>
+                    <div class="price-m-vendidos">
+                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                    </div>
+                </div>
+
+
+                <div class="box-produtos">
+
+                    <img src="icons/arvendido.svg" alt="" class="imagem">
+
+                    <div class="text-m-vendidos">
+                        <span class="span-m-vendido">
+                            <p class="p-m-vendido">Oferta</p>
+                        </span>
+                        <p>Ar Condicionado Split Dual Inverter Hi Wall LG Voice ArtCool 18000 BTUs Frio Só 220V</p>
+                    </div>
+                    <div class="price-m-vendidos">
+                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                    </div>
+                </div>
+                <div class="box-produtos">
+
+                    <img src="icons/geladeiravendida.svg" alt="" class="imagem">
+                    <div class="text-m-vendidos">
+                        <span class="span-m-vendido">
+                            <p class="p-m-vendido">Oferta</p>
+                        </span>
+                        <p>Geladeira Brastemp 554 Litros - 220V</p>
+                    </div>
+                    <div class="price-m-vendidos">
+                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                    </div>
+                </div>
+
+                <div class="box-produtos">
+                    <img src="icons/geladeiravendida.svg" alt="" class="imagem">
+
+                    <div class="text-m-vendidos">
+                        <span class="span-m-vendido">
+                            <p class="p-m-vendido">Oferta</p>
+                        </span>
+                        <p>Geladeira Brastemp 554 Litros - 220V</p>
+                    </div>
+                    <div class="price-m-vendidos">
+                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
+                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Fim Main -->
+        <!-- Rodapé -->
+        <div class="p-rodape">
+            <div>
+                <h3>Categorias</h3>
+                <p><a href="#">Ar-Condicionado</a></p>
+                <p><a href="#">Geladeiras</a></p>
+                <p><a href="#">Lavadoras</a></p>
+                <p><a href="#">Peças</a></p>
+            </div>
+            <div>
+                <h3>Área do Cliente</h3>
+                <p><a href="#">Minha Conta</a></p>
+                <p><a href="#">Meus Pedidos</a></p>
+                <p><a href="#">Meu Carrinho</a></p>
+            </div>
+            <div>
+                <h3>Contatos</h3>
+                <p>(11) 98765-4321</p>
+                <p>(11) 0000-0000</p>
+                <p>Seg - Sex das 9h - 18h</p>
+            </div>
+            <div>
+                <h3>Formas de Pagamento</h3>
+                <div id="vp">
+                    <img src="Imagens/Pagamento_Visa.png" width="60" height="35">
+                    <img src="Imagens/Pagamento_Pix.png" width="74" height="45">
+                </div>
+                <div id="bm">
+                    <img src="Imagens/Pagamento_Boleto.png" width="86" height="57">
+                    <img src="Imagens/Pagamento_MasterCard.png" width="69" height="42">
+                </div>
+            </div>
         </div>
 
-        <section class="produtos">
-            <div class="box-produtos">
-                <img src="icons/geladeiravendida.svg" alt="" class="imagem">
-                <div class="text-m-vendidos">
-                    <span class="span-m-vendido">
-                        <p class="p-m-vendido">Oferta</p>
-                    </span>
-                    <p class="nome-vendido">Geladeira Brastemp 554 Litros - 220V</p>
-                </div>
-                <div class="price-m-vendidos">
-                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                </div>
-            </div>
-
-
-            <div class="box-produtos">
-
-                <img src="icons/maquinavendida.svg" alt="" class="imagem">
-
-                <div class="text-m-vendidos">
-                    <span class="span-m-vendido">
-                        <p class="p-m-vendido">Oferta</p>
-                    </span>
-                    <p>Máquina de Lavar Samsung 11kg</p>
-                </div>
-                <div class="price-m-vendidos">
-                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                </div>
-            </div>
-
-
-
-            <div class="box-produtos">
-
-                <img src="icons/pecavendida.svg" alt="" class="imagem">
-                <div class="text-m-vendidos">
-                    <span class="span-m-vendido">
-                        <p class="p-m-vendido">Oferta</p>
-                    </span>
-                    <p>Peça para Lavadora Agitador 10kg</p>
-                </div>
-                <div class="price-m-vendidos">
-                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                </div>
-            </div>
-
-
-            <div class="box-produtos">
-
-                <img src="icons/arvendido.svg" alt="" class="imagem">
-
-                <div class="text-m-vendidos">
-                    <span class="span-m-vendido">
-                        <p class="p-m-vendido">Oferta</p>
-                    </span>
-                    <p>Ar Condicionado Split Dual Inverter Hi Wall LG Voice ArtCool 18000 BTUs Frio Só 220V</p>
-                </div>
-                <div class="price-m-vendidos">
-                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                </div>
-            </div>
-            <div class="box-produtos">
-
-                <img src="icons/geladeiravendida.svg" alt="" class="imagem">
-                <div class="text-m-vendidos">
-                    <span class="span-m-vendido">
-                        <p class="p-m-vendido">Oferta</p>
-                    </span>
-                    <p>Geladeira Brastemp 554 Litros - 220V</p>
-                </div>
-                <div class="price-m-vendidos">
-                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                </div>
-            </div>
-
-            <div class="box-produtos">
-                <img src="icons/geladeiravendida.svg" alt="" class="imagem">
-
-                <div class="text-m-vendidos">
-                    <span class="span-m-vendido">
-                        <p class="p-m-vendido">Oferta</p>
-                    </span>
-                    <p>Geladeira Brastemp 554 Litros - 220V</p>
-                </div>
-                <div class="price-m-vendidos">
-                    <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                    <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Fim Main -->
-    <!-- Rodapé -->
-    <div class="p-rodape">
-        <div>
-            <h3>Categorias</h3>
-            <p><a href="#">Ar-Condicionado</a></p>
-            <p><a href="#">Geladeiras</a></p>
-            <p><a href="#">Lavadoras</a></p>
-            <p><a href="#">Peças</a></p>
-        </div>
-        <div>
-            <h3>Área do Cliente</h3>
-            <p><a href="#">Minha Conta</a></p>
-            <p><a href="#">Meus Pedidos</a></p>
-            <p><a href="#">Meu Carrinho</a></p>
-        </div>
-        <div>
-            <h3>Contatos</h3>
-            <p>(11) 98765-4321</p>
-            <p>(11) 0000-0000</p>
-            <p>Seg - Sex das 9h - 18h</p>
-        </div>
-        <div>
-            <h3>Formas de Pagamento</h3>
-            <div id="vp">
-                <img src="Imagens/Pagamento_Visa.png" width="60" height="35">
-                <img src="Imagens/Pagamento_Pix.png" width="74" height="45">
-            </div>
-            <div id="bm">
-                <img src="Imagens/Pagamento_Boleto.png" width="86" height="57">
-                <img src="Imagens/Pagamento_MasterCard.png" width="69" height="42">
-            </div>
+        <div class="s-rodape">
+            <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo -
+                CEP:08554-080</p>
         </div>
     </div>
-
-    <div class="s-rodape">
-        <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo -
-            CEP:08554-080</p>
-    </div>
-
     <script src="JS/Navbar.js"></script>
     <script src="JS/Dropdown.js"></script>
     <script src="JS/todosProdutos/todosProdutos.js"></script>
