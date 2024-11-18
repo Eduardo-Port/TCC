@@ -55,61 +55,52 @@
 
 
         <li style="margin-right: 95px; margin-left: 95px;">
-            <li style="margin-right: 95px; margin-left: 95px;">
-                <div class="drop-search">
-                    <div class="browser-container">
-                        <input type="text" placeholder="Buscar">
-                        <div class="lupa"><img src="Imagens/Icon_Lupa.png" width="100%" height="100%"
-                                style="border-radius: 11px;"></div>
+            <div class="drop-search">
+                <div class="browser-container">
+                    <!-- Campo de busca -->
+                    <input type="text" id="searchInput" placeholder="Buscar">
+                    <div class="lupa">
+                        <img src="Imagens/Icon_Lupa.png" width="100%" height="100%" style="border-radius: 11px;">
                     </div>
-                    <ul class="buscar-produto">
-                        <li>
-                            <ul>
-                                <li>
-                                    <img src="Imagens/Produto_Geladeira.png" width="65px" height="65px">
-                                </li>
-                                <li>
-                                    <p>Geladeira meuzovo 220V muito monstra</p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <li>
-                                    <img src="Imagens/Produto_Geladeira.png" width="65px" height="65px">
-                                </li>
-                                <li>
-                                    <p>Geladeira meuzovo 220V muito monstra</p>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div>
-            </li>
+                <!-- Lista dinâmica de resultados -->
+                <ul class="buscar-produto">
+                    <li>
+                        <ul>
+                            <li>
+                                <img src="Imagens/Produto_Geladeira.png" width="65px" height="65px">
+                            </li>
+                            <li>
+                                <p>Geladeira meuzovo 220V muito monstra</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <img src="Imagens/Produto_Geladeira.png" width="65px" height="65px">
+                            </li>
+                            <li>
+                                <p>Geladeira meuzovo 220V muito monstra</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </li>
+        
 
         <div class="user-carrinho">
             <li class="nav-item-dropdown">
                 <div class="drop-perfil">
-                    <img src="icons/user.svg" alt="Ícone de usuário">
-                    <ul class="user-dropdown">
-                        <li>
-                            <p id="user">Usuário</p>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p>Minha Conta</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p>Meu Carrinho</p>
-                            </a>
-                            <div class="line"></div>
-                        </li>
+                    <img id="user-icon" src="icons/user.svg" alt="Ícone de usuário">
+                    <span id="user-name" style="display: none;"></span>
+                    <ul class="user-dropdown" id="user-options">
+                       
                     </ul>
                 </div>
             </li>
+            
             <li style="cursor: pointer;"><img src="Imagens/Icon_Carrinho.png" width="50px" height="48px"
                     class="carrinho-toggler"></li>
         </div>
@@ -303,6 +294,8 @@
     <script src="JS/Navbar.js"></script>
     <script src="JS/carrinho.js"></script>
     <script src="JS/index/index.js"></script>
+    <script src="JS/searchMenu.js"></script>
+    <script src="JS/ToggleIcon.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ const conn = mysql.createPool({
     user: 'root',
     database: 'codeux',
     waitForConnections: true,
-    password: 'root',
+    password: '',
     queueLimit: 0
 })
 
