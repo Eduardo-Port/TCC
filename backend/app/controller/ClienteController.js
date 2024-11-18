@@ -259,6 +259,7 @@ class ClienteController {
         const productFolderPath = path.join(__dirname, '../../upload', `produto_${productId}`);
         const produtoOBJ = new Produto();
         const produtin = await produtoOBJ.preencheProduto(productId)
+        console.log("teste do produtin", produtin)
         // Verifica se a pasta do produto existe
         fs.access(productFolderPath, fs.constants.F_OK, (err) => {
             if (err) {

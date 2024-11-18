@@ -16,43 +16,33 @@
 <body>
     <div id="container">
         <!-- Menu -->
+        <aside id="carrinho-lateral">
+            <h2>Carrinho (0)</h2>
+            <p>Você não possui itens no seu carrinho.</p>
+        </aside>
+
+
         <ul id="menu">
             <aside id="sidebar">
                 <div class="sidebar_content sidebar_head">
-                    <h1>Sidebar</h1>
+                    <h1>Categorias</h1>
                 </div>
 
                 <div class="sidebar_content sidebar_body">
                     <nav class="side_navlinks">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="./Todos_Produtos.html?categoria=Ar-Condicionado">Ar-Condicionado</a></li>
+                            <li><a href="./Todos_Produtos.html?categoria=Geladeiras">Geladeiras</a></li>
+                            <li><a href="./Todos_Produtos.html?categoria=Lavadoras">Lavadoras</a></li>
+                            <li><a href="./Todos_Produtos.html?categoria=Peças">Peças</a></li>
                         </ul>
                     </nav>
-                </div>
-
-                <div class="sidebar_content sidebar_foot">
-                    <p>
-                        &#169;
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script>
-                        &#160;JavaScript Sidebar.
-                    </p>
                 </div>
             </aside>
 
             <!--== Sidebar-Toggler ==-->
-
             <div class="logo-menu">
                 <div class="sidebar_toggler">
-                    <!-- <li style="margin-right: 34px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="31" fill="#004AAD" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
-                </li> -->
                     <span></span>
                     <span></span>
                     <span></span>
@@ -65,27 +55,63 @@
 
 
             <li style="margin-right: 95px; margin-left: 95px;">
-                <div class="browser-container">
-                    <input type="text" placeholder="Buscar">
-                    <div class="lupa"><img src="Imagens/Icon_Lupa.png" width="100%" height="100%"
-                            style="border-radius: 11px;"></div>
+                <div class="drop-search">
+                    <div class="browser-container">
+                        <!-- Campo de busca -->
+                        <input type="text" id="searchInput" placeholder="Buscar">
+                        <div class="lupa">
+                            <img src="Imagens/Icon_Lupa.png" width="100%" height="100%" style="border-radius: 11px;">
+                        </div>
+                    </div>
+                    <!-- Lista dinâmica de resultados -->
+                    <ul class="buscar-produto">
+                        <li>
+                            <ul>
+                                <li>
+                                    <img src="Imagens/Produto_Geladeira.png" width="65px" height="65px">
+                                </li>
+                                <li>
+                                    <p>Geladeira meuzovo 220V muito monstra</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>
+                                    <img src="Imagens/Produto_Geladeira.png" width="65px" height="65px">
+                                </li>
+                                <li>
+                                    <p>Geladeira meuzovo 220V muito monstra</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </li>
 
+
             <div class="user-carrinho">
                 <li class="nav-item-dropdown">
-                    <img src="icons/user.svg" alt="Ícone de usuário">
+                    <div class="drop-perfil">
+                        <img id="user-icon" src="icons/user.svg" alt="Ícone de usuário">
+                        <span id="user-name" style="display: none;"></span>
+                        <ul class="user-dropdown" id="user-options">
+
+                        </ul>
+                    </div>
                 </li>
-                <li><a href="#"><img src="Imagens/Icon_Carrinho.png" width="50px" height="48px"></a></li>
+
+                <li style="cursor: pointer;"><img src="Imagens/Icon_Carrinho.png" width="50px" height="48px"
+                        class="carrinho-toggler"></li>
             </div>
 
         </ul>
 
         <ul id="submenu">
-            <li><a href="#">Ar-Condicionado</a></li>
-            <li><a href="#">Geladeiras</a></li>
-            <li><a href="#">Lavadoras</a></li>
-            <li><a href="#">Peças</a></li>
+            <li><a href="./Todos_Produtos.html?categoria=Ar-Condicionado" class="submenu-itens">Ar-Condicionado</a></li>
+            <li><a href="./Todos_Produtos.html?categoria=Geladeiras" class="submenu-itens">Geladeiras</a></li>
+            <li><a href="./Todos_Produtos.html?categoria=Lavadoras" class="submenu-itens">Lavadoras</a></li>
+            <li><a href="./Todos_Produtos.html?categoria=Peças" class="submenu-itens">Peças</a></li>
         </ul>
         <!-- Menu -->
         <!-- Carrossel -->
@@ -161,55 +187,6 @@
 
             <section class="produtos">
                 <div class="box-produtos">
-                    <img src="icons/geladeiravendida.svg" alt="" class="imagem">
-                    <div class="text-m-vendidos">
-                        <span class="span-m-vendido">
-                            <p class="p-m-vendido">Oferta</p>
-                        </span>
-                        <p class="nome-vendido">Geladeira Brastemp 554 Litros - 220V</p>
-                    </div>
-                    <div class="price-m-vendidos">
-                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                    </div>
-                </div>
-
-
-                <div class="box-produtos">
-
-                    <img src="icons/maquinavendida.svg" alt="" class="imagem">
-
-                    <div class="text-m-vendidos">
-                        <span class="span-m-vendido">
-                            <p class="p-m-vendido">Oferta</p>
-                        </span>
-                        <p>Máquina de Lavar Samsung 11kg</p>
-                    </div>
-                    <div class="price-m-vendidos">
-                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                    </div>
-                </div>
-
-
-
-                <div class="box-produtos">
-
-                    <img src="icons/pecavendida.svg" alt="" class="imagem">
-                    <div class="text-m-vendidos">
-                        <span class="span-m-vendido">
-                            <p class="p-m-vendido">Oferta</p>
-                        </span>
-                        <p>Peça para Lavadora Agitador 10kg</p>
-                    </div>
-                    <div class="price-m-vendidos">
-                        <h1 class="price-h1-m-vendidos">R$ 3.500,00</h1>
-                        <p class="promo-m-vendidos">ou R$ 3.700,00 em 10x de R$ 370,00 sem juros</p>
-                    </div>
-                </div>
-
-
-                <div class="box-produtos">
 
                     <img src="icons/arvendido.svg" alt="" class="imagem">
 
@@ -258,47 +235,53 @@
 
         <!-- Fim Main -->
         <!-- Rodapé -->
-        <div class="p-rodape">
-            <div>
-                <h3>Categorias</h3>
-                <p><a href="#">Ar-Condicionado</a></p>
-                <p><a href="#">Geladeiras</a></p>
-                <p><a href="#">Lavadoras</a></p>
-                <p><a href="#">Peças</a></p>
-            </div>
-            <div>
-                <h3>Área do Cliente</h3>
-                <p><a href="#">Minha Conta</a></p>
-                <p><a href="#">Meus Pedidos</a></p>
-                <p><a href="#">Meu Carrinho</a></p>
-            </div>
-            <div>
-                <h3>Contatos</h3>
-                <p>(11) 98765-4321</p>
-                <p>(11) 0000-0000</p>
-                <p>Seg - Sex das 9h - 18h</p>
-            </div>
-            <div>
-                <h3>Formas de Pagamento</h3>
-                <div id="vp">
-                    <img src="Imagens/Pagamento_Visa.png" width="60" height="35">
-                    <img src="Imagens/Pagamento_Pix.png" width="74" height="45">
-                </div>
-                <div id="bm">
-                    <img src="Imagens/Pagamento_Boleto.png" width="86" height="57">
-                    <img src="Imagens/Pagamento_MasterCard.png" width="69" height="42">
-                </div>
-            </div>
+    <div class="p-rodape">
+        <div>
+            <h3>Categorias</h3>
+            <p><a href="./Todos_Produtos.html?categoria=Ar-Condicionado">Ar-Condicionado</a></p>
+            <p><a href="./Todos_Produtos.html?categoria=Geladeiras">Geladeiras</a></p>
+            <p><a href="./Todos_Produtos.html?categoria=Lavadoras">Lavadoras</a></p>
+            <p><a href="./Todos_Produtos.html?categoria=Peças">Peças</a></p>
         </div>
-
-        <div class="s-rodape">
-            <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo -
-                CEP:08554-080</p>
+        <div>
+            <h3>Área do Cliente</h3>
+            <p><a href="./Dados.html">Minha Conta</a></p>
+            <p><a href="#">Meus Pedidos</a></p>
+            <p><a href="#">Meu Carrinho</a></p>
+        </div>
+        <div>
+            <h3>Contatos</h3>
+            <p>(11) 98765-4321</p>
+            <p>(11) 93535-6049</p>
+            <p>Seg - Sex das 9h - 18h</p>
+        </div>
+        <div>
+            <h3>Formas de Pagamento</h3>
+            <div id="vp">
+                <img src="Imagens/Pagamento_Visa.png" width="60" height="35">
+                <img src="Imagens/Pagamento_Pix.png" width="74" height="45">
+            </div>
+            <div id="bm">
+                <img src="Imagens/Pagamento_Boleto.png" width="86" height="57">
+                <img src="Imagens/Pagamento_MasterCard.png" width="69" height="42">
+            </div>
         </div>
     </div>
+
+    <div class="s-rodape">
+        <p>2024 - Todos os direitos reservados | REFRIGERACAO TBM ServCom | CNPJ: 26.352.689/0001-29 | Sao Paulo -
+            CEP:08554-080</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="JS/Navbar.js"></script>
     <script src="JS/Dropdown.js"></script>
+    <script src="JS/searchMenu.js"></script>
+    <script src="JS/ToggleIcon.js"></script>
     <script src="JS/todosProdutos/todosProdutos.js"></script>
+    <script src="JS/carrinho.js"></script>
 </body>
 
 </html>

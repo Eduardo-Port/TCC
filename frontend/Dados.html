@@ -29,89 +29,89 @@
     </div>
 
     <!-- Corpo -->
-    <div class="corpo">
-        <div class="box-but">
-            <div class="box-resi">
-                <h2>Dados Residenciais</h2>
+    <main id="content">
+        <div class="corpo">
+            <div class="box-but">
+                <div class="box-resi">
+                    <h2>Dados Residenciais</h2>
+                    <div class="line"></div>
+                    <div class="wrap-data">
+                        <p>Logradouro:</p>
+                        <span id="log"></span>
+                    </div>
+
+                    <div class="wrap-data">
+                        <p>Nº:</p>
+                        <span id="num"></span>
+                    </div>
+                    <div class="wrap-data">
+                        <p>Complemento:</p>
+                        <span id="compl"></span>
+                    </div>
+                    <div class="wrap-data">
+                        <p>Bairro:</p>
+                        <span id="bairro"></span>
+                    </div>
+                    <div class="wrap-data">
+                        <p>CEP:</p>
+                        <span id="cep"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="box-pes">
+                <h2>Dados Pessoais</h2>
                 <div class="line"></div>
                 <div class="wrap-data">
-                    <p>Logradouro:</p>
-                    <span id="log"></span>
-                </div>
-
-                <div class="wrap-data">
-                    <p>Nº:</p>
-                    <span id="num"></span>
+                    <p>Nome Completo:</p>
+                    <span id="name"></span>
                 </div>
                 <div class="wrap-data">
-                    <p>Complemento:</p>
-                    <span id="compl"></span>
+                    <p>CPF:</p>
+                    <span id="cpf"></span>
                 </div>
+                <div class="line"></div>
                 <div class="wrap-data">
-                    <p>Bairro:</p>
-                    <span id="bairro"></span>
-                </div>
-                <div class="wrap-data">
-                    <p>CEP:</p>
-                    <span id="cep"></span>
+                    <p>E-mail:</p>
+                    <span id="email"></span>
                 </div>
             </div>
         </div>
-        <div class="box-pes">
-            <h2>Dados Pessoais</h2>
-            <div class="line"></div>
-            <div class="wrap-data">
-                <p>Nome Completo:</p>
-                <span id="name"></span>
-            </div>
-            <div class="wrap-data">
-                <p>CPF:</p>
-                <span id="cpf"></span>
-            </div>
-            <div class="line"></div>
-            <div class="wrap-data">
-                <p>E-mail:</p>
-                <span id="email"></span>
+        </div>
+
+        <div id="custom-confirm" class="hidden">
+            <div class="confirm-box">
+                <p id="confirm-message">Você tem certeza?</p>
+                <div class="confirm-buttons">
+                    <button id="confirm-yes">Sim</button>
+                    <button id="confirm-no">Não</button>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
 
-    <div id="custom-confirm" class="hidden">
-        <div class="confirm-box">
-            <p id="confirm-message">Você tem certeza?</p>
-            <div class="confirm-buttons">
-                <button id="confirm-yes">Sim</button>
-                <button id="confirm-no">Não</button>
-            </div>
+        <div class="botao">
+            <a href="./Editar_Dados.html"><button>Editar</button></a>
+            <button id="excluir">Excluir</button>
         </div>
-    </div>
-
-    <div class="botao">
-        <button>Editar</button>
-        <button id="excluir">Excluir</button>
-    </div>
-
+    </main>
     <!-- Rodapé -->
-
     <div class="p-rodape">
         <div>
             <h3>Categorias</h3>
-            <p><a href="#">Ar-Condicionado</a></p>
-            <p><a href="#">Geladeiras</a></p>
-            <p><a href="#">Lavadoras</a></p>
-            <p><a href="#">Peças</a></p>
+            <p><a href="./Todos_Produtos.html?categoria=Ar-Condicionado">Ar-Condicionado</a></p>
+            <p><a href="./Todos_Produtos.html?categoria=Geladeiras">Geladeiras</a></p>
+            <p><a href="./Todos_Produtos.html?categoria=Lavadoras">Lavadoras</a></p>
+            <p><a href="./Todos_Produtos.html?categoria=Peças">Peças</a></p>
         </div>
         <div>
             <h3>Área do Cliente</h3>
-            <p><a href="#">Minha Conta</a></p>
+            <p><a href="./Dados.html">Minha Conta</a></p>
             <p><a href="#">Meus Pedidos</a></p>
             <p><a href="#">Meu Carrinho</a></p>
         </div>
         <div>
             <h3>Contatos</h3>
             <p>(11) 98765-4321</p>
-            <p>(11) 0000-0000</p>
+            <p>(11) 93535-6049</p>
             <p>Seg - Sex das 9h - 18h</p>
         </div>
         <div>

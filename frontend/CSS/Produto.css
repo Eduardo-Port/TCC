@@ -30,10 +30,10 @@ main {
 
 .nome-produto {
     font-family: 'Arial';
-    font-weight: 700;
-    font-size: 28px;
+    font-weight: 600;
+    font-size: 30px;
     line-height: 32px;
-    color: rgba(0, 47, 111, 0.85);
+    color: #004095;
 }
 
 .wrap-other-images {
@@ -225,7 +225,7 @@ main {
     border-bottom: 2px solid white;
 }
 
-.title {
+.title-info-product {
     width: 100%;
     font-weight: 700;
     font-size: 22px;

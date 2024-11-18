@@ -20,10 +20,10 @@ function renderUserDropDown() {
                 userName.textContent = `Olá, ${data.nome}`;
                 userName.style.display = 'inline'; 
                 userIcon.style.display = 'none';  
-
+                userName.className ='drop-perfil'
                 userOptions.innerHTML = `
-                    <li><a href="#">Minha Conta</a></li>
-                    <li><a href="#">Sair</a></li>
+                    <li class="my-account"><a href="./Dados.html">Minha Conta</a></li>
+                    <li class="my-account"><a href="./Login.html">Sair</a></li>
                 `;
             }
         })

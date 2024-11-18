@@ -11,12 +11,10 @@ body {
 #tudo {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    border: 1px solid red;
 }
 
 .content {
-    height: 92vh;
+    min-height: 77vh;
 }
 
 .voltar a {

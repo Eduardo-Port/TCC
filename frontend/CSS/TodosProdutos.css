@@ -31,7 +31,7 @@ html, body {
 
 #main {
     max-width: 1052px;
-    height: 100vh;
+    min-height: 33vh;
     margin: 0 auto; 
     margin-bottom: 300px;
     margin-top: 52px;

@@ -106,8 +106,12 @@ async function getProduct() {
     //fala q o meu elemento precoParcela, filho do pagamentoProduto tem q ser inserido antes de outro filho o button-buy
     pagamentoProduto.insertBefore(precoParcela, pagamentoProduto.querySelector('.button-buy'));
 
-
-    //pegando elementos pra fzr as trocas de img
+    //info dos produtos
+    const infoProduto = document.getElementsByClassName("title-info-product")[0]
+    infoProduto.innerText = `${data.produto.nome}`
+    const text = document.getElementsByClassName("all-text")[0]
+    text.innerText = `${data.produto.ficha}`
+    //pegando elementos pra fzr  as trocas de img
     const smallImg = document.querySelectorAll(".other-images-real")
     const bigImg = document.getElementsByClassName("image-produto")[0]
     //func para selecionar a imagem clicada e adicionar a borda

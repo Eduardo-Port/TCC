@@ -22,6 +22,11 @@ async function searchInputKeyUp() {
   const query = searchInput.value.toLowerCase().trim();
   const allProducts = await getAllProducts();
 
+  if (!Array.isArray(allProducts)) {
+    console.error('Dados recebidos não são um array:', allProducts);
+    return;
+  }
+  
   const filteredProducts = allProducts.filter((product) =>
     product.nome.toLowerCase().includes(query)
   );
@@ -43,13 +48,28 @@ function updateSearchResults(products, query) {
   products.forEach((product) => {
     const productElement = document.createElement("li");
     productElement.innerHTML = `  
-        <ul>
-          <li><img src="../backend/upload/${product.imagem}" width="65" height="65"></li>
-          <li><p>${product.nome}</p></li>
+        <ul class ="list-search">
+            <a href="produto.html?pd=${product.id}" id="link-search">
+              <div id=wrap-search>
+                <li class="imagem-search"><img src="../backend/upload/${product.imagem}" width="65" height="65"></li>
+                <li><p id = "nome-search">${product.nome}</p></li>
+              </div>
+            </a>
         </ul>
       `;
     resultContainer.appendChild(productElement);
   });
 }
+
+window.addEventListener('click', (e) => {
+  // Pega os elementos que queremos verificar
+  const searchBox = document.querySelector('.browser-container');
+  const searchResults = document.querySelector('.buscar-produto');
+  
+  // Verifica se o clique foi fora tanto da caixa de busca quanto dos resultados
+  if (!searchBox.contains(e.target) && !searchResults.contains(e.target)) {
+      resultContainer.classList.remove('active');
+  }
+});
 
 searchInput.addEventListener("keyup", _.debounce(searchInputKeyUp, 400));

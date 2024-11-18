@@ -185,7 +185,7 @@
     display: none;
 
     margin-top: 3px;
-    margin-left: -50px;
+    margin-left: -14px;
 
     width: 150px;
     height: 150px;
@@ -198,6 +198,46 @@
 
     padding: 20px;
 
+}
+
+.list-search {
+    display: flex;
+    gap: 20px;
+    padding-left: 0px;
+}
+
+.list-search a {
+    text-decoration: none;
+    color: #004095;
+}
+
+/* Estilo para o texto dentro do link */
+.list-search a #nome-search {
+    text-decoration: none;
+    margin-top: 10px;
+    color: #004095;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+
+/* Para garantir que o hover também não terá decoração */
+.list-search a:hover {
+    text-decoration: none;
+}
+
+.list-search a:hover #nome-search {
+    text-decoration: none;
+}
+
+#wrap-search {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+#link-search {
+    width: 100%;
 }
 
 .user-dropdown.active {
@@ -301,9 +341,21 @@
     border-bottom: 1px solid #004AAD;
 }
 
-.buscar-produto li ul p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 19px;
 
-    color: #000;
+.submenu-itens:hover {
+    color: #004100;
+}
+
+.drop-perfil {
+    color: #004AAD;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 12px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.my-account {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #004AAD;
+    font-size: 30px;
 }
